@@ -1,0 +1,42 @@
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\BD.dll
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\BD.pdb
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\BD.xml
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\Entidades.dll
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\Npgsql.dll
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\Entidades.pdb
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\Entidades.xml
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\Npgsql.xml
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\BD\obj\Debug\BD.vbprojResolveAssemblyReference.cache
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\BD\obj\Debug\BD.Resources.resources
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\BD\obj\Debug\BD.vbproj.GenerateResource.Cache
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\BD\obj\Debug\BD.dll
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\BD\obj\Debug\BD.xml
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\BD\obj\Debug\BD.pdb
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\BD.dll
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\BD.pdb
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\BD.xml
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\Entidades.dll
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\Npgsql.dll
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\Entidades.pdb
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\Entidades.xml
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\BD\bin\Debug\Npgsql.xml
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\BD\obj\Debug\BD.vbprojResolveAssemblyReference.cache
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\BD\obj\Debug\BD.Resources.resources
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\BD\obj\Debug\BD.vbproj.GenerateResource.Cache
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\BD\obj\Debug\BD.dll
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\BD\obj\Debug\BD.xml
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\BD\obj\Debug\BD.pdb
+C:\Users\Bucarel\OneDrive\Bucarel\BD\bin\Debug\BD.dll
+C:\Users\Bucarel\OneDrive\Bucarel\BD\bin\Debug\BD.pdb
+C:\Users\Bucarel\OneDrive\Bucarel\BD\bin\Debug\BD.xml
+C:\Users\Bucarel\OneDrive\Bucarel\BD\bin\Debug\Entidades.dll
+C:\Users\Bucarel\OneDrive\Bucarel\BD\bin\Debug\Npgsql.dll
+C:\Users\Bucarel\OneDrive\Bucarel\BD\bin\Debug\Entidades.pdb
+C:\Users\Bucarel\OneDrive\Bucarel\BD\bin\Debug\Entidades.xml
+C:\Users\Bucarel\OneDrive\Bucarel\BD\bin\Debug\Npgsql.xml
+C:\Users\Bucarel\OneDrive\Bucarel\BD\obj\Debug\BD.vbprojResolveAssemblyReference.cache
+C:\Users\Bucarel\OneDrive\Bucarel\BD\obj\Debug\BD.Resources.resources
+C:\Users\Bucarel\OneDrive\Bucarel\BD\obj\Debug\BD.vbproj.GenerateResource.Cache
+C:\Users\Bucarel\OneDrive\Bucarel\BD\obj\Debug\BD.dll
+C:\Users\Bucarel\OneDrive\Bucarel\BD\obj\Debug\BD.xml
+C:\Users\Bucarel\OneDrive\Bucarel\BD\obj\Debug\BD.pdb

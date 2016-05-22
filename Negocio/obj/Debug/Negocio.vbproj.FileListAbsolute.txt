@@ -1,0 +1,51 @@
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Negocio.dll
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Negocio.xml
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\BD.dll
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Entidades.dll
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Npgsql.dll
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\BD.pdb
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\BD.xml
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Entidades.pdb
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Entidades.xml
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Npgsql.xml
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\obj\Debug\Negocio.vbprojResolveAssemblyReference.cache
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\obj\Debug\Negocio.Resources.resources
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\obj\Debug\Negocio.vbproj.GenerateResource.Cache
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\obj\Debug\Negocio.dll
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\obj\Debug\Negocio.xml
+C:\Users\Bucarel\Documents\Visual Studio 2013\Projects\Bucarel\Negocio\obj\Debug\Negocio.pdb
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Negocio.dll
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Negocio.pdb
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Negocio.xml
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\BD.dll
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Entidades.dll
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Npgsql.dll
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\BD.pdb
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\BD.xml
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Entidades.pdb
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Entidades.xml
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\bin\Debug\Npgsql.xml
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\obj\Debug\Negocio.vbprojResolveAssemblyReference.cache
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\obj\Debug\Negocio.Resources.resources
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\obj\Debug\Negocio.vbproj.GenerateResource.Cache
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\obj\Debug\Negocio.dll
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\obj\Debug\Negocio.xml
+C:\Users\dbaub\OneDrive\Documentos\Visual Studio 2013\Projects\Bucarel\Negocio\obj\Debug\Negocio.pdb
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\bin\Debug\Negocio.dll
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\bin\Debug\Negocio.xml
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\bin\Debug\BD.dll
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\bin\Debug\Entidades.dll
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\bin\Debug\Npgsql.dll
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\bin\Debug\BD.pdb
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\bin\Debug\BD.xml
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\bin\Debug\Entidades.pdb
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\bin\Debug\Entidades.xml
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\bin\Debug\Npgsql.xml
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\obj\Debug\Negocio.vbprojResolveAssemblyReference.cache
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\obj\Debug\Negocio.Resources.resources
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\obj\Debug\Negocio.vbproj.GenerateResource.Cache
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\obj\Debug\Negocio.dll
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\obj\Debug\Negocio.xml
+C:\Users\Bucarel\OneDrive\Bucarel\Negocio\obj\Debug\Negocio.pdb
