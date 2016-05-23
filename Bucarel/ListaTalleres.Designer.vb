@@ -22,8 +22,8 @@ Partial Class Listatalleres
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DGTalleres = New System.Windows.Forms.DataGridView()
         Me.txtCodigo = New System.Windows.Forms.TextBox()
         Me.txtNombre = New System.Windows.Forms.TextBox()
@@ -43,25 +43,25 @@ Partial Class Listatalleres
         Me.DGTalleres.AllowUserToDeleteRows = False
         Me.DGTalleres.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGTalleres.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGTalleres.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGTalleres.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGTalleres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGTalleres.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGTalleres.DefaultCellStyle = DataGridViewCellStyle4
         Me.DGTalleres.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DGTalleres.Location = New System.Drawing.Point(54, 162)
+        Me.DGTalleres.Location = New System.Drawing.Point(30, 162)
         Me.DGTalleres.MultiSelect = False
         Me.DGTalleres.Name = "DGTalleres"
         Me.DGTalleres.RowHeadersVisible = False
@@ -73,7 +73,7 @@ Partial Class Listatalleres
         '
         Me.txtCodigo.Enabled = False
         Me.txtCodigo.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(54, 90)
+        Me.txtCodigo.Location = New System.Drawing.Point(30, 90)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(71, 22)
         Me.txtCodigo.TabIndex = 5
@@ -81,7 +81,7 @@ Partial Class Listatalleres
         'txtNombre
         '
         Me.txtNombre.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(131, 90)
+        Me.txtNombre.Location = New System.Drawing.Point(107, 90)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(616, 22)
         Me.txtNombre.TabIndex = 1
@@ -100,7 +100,7 @@ Partial Class Listatalleres
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(51, 71)
+        Me.Label2.Location = New System.Drawing.Point(27, 71)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(48, 16)
         Me.Label2.TabIndex = 8
@@ -110,7 +110,7 @@ Partial Class Listatalleres
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(128, 71)
+        Me.Label3.Location = New System.Drawing.Point(104, 71)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 16)
         Me.Label3.TabIndex = 9
@@ -119,7 +119,7 @@ Partial Class Listatalleres
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(131, 134)
+        Me.txtBuscar.Location = New System.Drawing.Point(107, 134)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(616, 22)
         Me.txtBuscar.TabIndex = 5
@@ -128,7 +128,7 @@ Partial Class Listatalleres
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(51, 137)
+        Me.Label6.Location = New System.Drawing.Point(27, 137)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(76, 16)
         Me.Label6.TabIndex = 13
@@ -139,7 +139,7 @@ Partial Class Listatalleres
         Me.btnguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnguardar.Image = Global.Bucarel.My.Resources.Resources.Treetog_I_Floppy_Small
         Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(763, 420)
+        Me.btnguardar.Location = New System.Drawing.Point(729, 420)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(107, 39)
         Me.btnguardar.TabIndex = 4
@@ -152,7 +152,7 @@ Partial Class Listatalleres
         Me.btnAgregar.BackgroundImage = Global.Bucarel.My.Resources.Resources.Button_Add_icon32
         Me.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAgregar.Location = New System.Drawing.Point(763, 162)
+        Me.btnAgregar.Location = New System.Drawing.Point(729, 162)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(107, 42)
         Me.btnAgregar.TabIndex = 6
@@ -164,7 +164,7 @@ Partial Class Listatalleres
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(882, 471)
+        Me.ClientSize = New System.Drawing.Size(844, 487)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtBuscar)
@@ -176,6 +176,7 @@ Partial Class Listatalleres
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.DGTalleres)
         Me.Name = "Listatalleres"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Lista de Materiales"
         CType(Me.DGTalleres, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

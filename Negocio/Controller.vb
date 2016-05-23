@@ -168,6 +168,13 @@
 
     End Sub
 
+    Public Sub eliminarorden(ByRef p As Entidades.ordentrabajo)
+
+        bd.EliminarOrden(p)
+
+    End Sub
+
+
     Public Sub llenarGrillaOrdenTalles(ByRef g As Object, ByRef o As Entidades.ordentrabajo)
 
         g.datasource = Nothing
@@ -200,5 +207,13 @@
         Return bd.obtenerreportestock
 
     End Function
+
+
+    Public Function obtenerTalles() As List(Of Entidades.talle)
+
+        Return bd.obtenertalles
+
+    End Function
+
 
 End Class

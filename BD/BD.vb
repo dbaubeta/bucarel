@@ -53,7 +53,7 @@ Public Class BD
     Public Function obtenertalles() As List(Of Entidades.talle)
         Dim l As New List(Of Entidades.talle)
         'cn.Open()
-        Dim c As New NpgsqlCommand("select id, nombre from talle", cn)
+        Dim c As New NpgsqlCommand("select id, nombre from talle order by orden", cn)
         Dim r As NpgsqlDataReader = c.ExecuteReader
 
         Do While r.Read
@@ -469,6 +469,16 @@ Public Class BD
 
     End Sub
 
+    Public Sub EliminarOrden(ByRef p As Entidades.ordentrabajo)
+
+        ' Borrar el registro de todos los materiales de la orden para volver a grabarlos.
+        Dim dom As New NpgsqlCommand("delete from ordentrabajo where id = :id", cn)
+        dom.Parameters.AddWithValue("id", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
+        dom.ExecuteNonQuery()
+
+
+    End Sub
+
     Public Sub GuardarOrden(ByRef p As Entidades.ordentrabajo)
 
         ' Insertar el registro dfe cabecera de la Orden
@@ -534,6 +544,32 @@ Public Class BD
             r.Close()
 
         Next
+
+
+        ' Borrar todos las entregas de la orden para volver a grabarlos.
+        Dim eom As New NpgsqlCommand("delete from ordenentrega where ordenid = :id", cn)
+        eom.Parameters.AddWithValue("id", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
+        eom.ExecuteNonQuery()
+
+        ' Grabar los Talles de la orden
+        For Each oe As Entidades.ordenEntrega In p.listaEntregas
+            Dim c As New NpgsqlCommand("insert into ordenentrega (ordenid, fecha, talleid, cantidad) values(:ordenid, :fecha, :talleid, :cantidad) returning id", cn)
+            c.Parameters.AddWithValue("ordenid", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
+            c.Parameters.AddWithValue("fecha", NpgsqlTypes.NpgsqlDbType.Date, oe.fecha)
+            c.Parameters.AddWithValue("talleid", NpgsqlTypes.NpgsqlDbType.Integer, oe.IDTalle)
+            c.Parameters.AddWithValue("cantidad", NpgsqlTypes.NpgsqlDbType.Integer, oe.cantidad)
+
+            Dim r As NpgsqlDataReader = c.ExecuteReader()
+            Do While r.Read
+                Dim myvar As Long = r.GetInt32(0)
+            Loop
+            r.Close()
+
+        Next
+
+
+
+
 
 
     End Sub

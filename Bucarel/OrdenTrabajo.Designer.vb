@@ -459,6 +459,7 @@ Partial Class OrdenTrabajo
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "OrdenTrabajo"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "OrdenTrabajo"
         CType(Me.DGMateriales, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGTalles, System.ComponentModel.ISupportInitialize).EndInit()

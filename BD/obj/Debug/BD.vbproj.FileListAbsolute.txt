@@ -40,3 +40,17 @@ C:\Users\Bucarel\OneDrive\Bucarel\BD\obj\Debug\BD.vbproj.GenerateResource.Cache
 C:\Users\Bucarel\OneDrive\Bucarel\BD\obj\Debug\BD.dll
 C:\Users\Bucarel\OneDrive\Bucarel\BD\obj\Debug\BD.xml
 C:\Users\Bucarel\OneDrive\Bucarel\BD\obj\Debug\BD.pdb
+F:\git\Bucarel\BD\bin\Debug\BD.dll
+F:\git\Bucarel\BD\bin\Debug\BD.pdb
+F:\git\Bucarel\BD\bin\Debug\BD.xml
+F:\git\Bucarel\BD\bin\Debug\Entidades.dll
+F:\git\Bucarel\BD\bin\Debug\Npgsql.dll
+F:\git\Bucarel\BD\bin\Debug\Entidades.pdb
+F:\git\Bucarel\BD\bin\Debug\Entidades.xml
+F:\git\Bucarel\BD\bin\Debug\Npgsql.xml
+F:\git\Bucarel\BD\obj\Debug\BD.vbprojResolveAssemblyReference.cache
+F:\git\Bucarel\BD\obj\Debug\BD.Resources.resources
+F:\git\Bucarel\BD\obj\Debug\BD.vbproj.GenerateResource.Cache
+F:\git\Bucarel\BD\obj\Debug\BD.dll
+F:\git\Bucarel\BD\obj\Debug\BD.xml
+F:\git\Bucarel\BD\obj\Debug\BD.pdb

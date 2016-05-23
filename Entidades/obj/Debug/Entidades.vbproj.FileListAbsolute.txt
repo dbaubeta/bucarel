@@ -22,3 +22,11 @@ C:\Users\Bucarel\OneDrive\Bucarel\Entidades\obj\Debug\Entidades.vbproj.GenerateR
 C:\Users\Bucarel\OneDrive\Bucarel\Entidades\obj\Debug\Entidades.dll
 C:\Users\Bucarel\OneDrive\Bucarel\Entidades\obj\Debug\Entidades.xml
 C:\Users\Bucarel\OneDrive\Bucarel\Entidades\obj\Debug\Entidades.pdb
+F:\git\Bucarel\Entidades\bin\Debug\Entidades.dll
+F:\git\Bucarel\Entidades\bin\Debug\Entidades.pdb
+F:\git\Bucarel\Entidades\bin\Debug\Entidades.xml
+F:\git\Bucarel\Entidades\obj\Debug\Entidades.Resources.resources
+F:\git\Bucarel\Entidades\obj\Debug\Entidades.vbproj.GenerateResource.Cache
+F:\git\Bucarel\Entidades\obj\Debug\Entidades.dll
+F:\git\Bucarel\Entidades\obj\Debug\Entidades.xml
+F:\git\Bucarel\Entidades\obj\Debug\Entidades.pdb

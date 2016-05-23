@@ -82,4 +82,14 @@
         End Set
     End Property
 
+
+
+    Public Sub New()
+
+        Me.listaEntregas = New List(Of ordenEntrega)
+        Me.listaMateriales = New List(Of ordenMaterial)
+        Me.listaTalles = New List(Of ordenTalle)
+
+    End Sub
+
 End Class

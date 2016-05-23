@@ -61,12 +61,12 @@ Partial Class ListaOrdenes
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGOrdenes.DefaultCellStyle = DataGridViewCellStyle2
         Me.DGOrdenes.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DGOrdenes.Location = New System.Drawing.Point(54, 105)
+        Me.DGOrdenes.Location = New System.Drawing.Point(30, 105)
         Me.DGOrdenes.MultiSelect = False
         Me.DGOrdenes.Name = "DGOrdenes"
         Me.DGOrdenes.RowHeadersVisible = False
         Me.DGOrdenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGOrdenes.Size = New System.Drawing.Size(703, 354)
+        Me.DGOrdenes.Size = New System.Drawing.Size(727, 354)
         Me.DGOrdenes.TabIndex = 0
         '
         'Label1
@@ -82,7 +82,7 @@ Partial Class ListaOrdenes
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(131, 77)
+        Me.txtBuscar.Location = New System.Drawing.Point(107, 77)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(428, 22)
         Me.txtBuscar.TabIndex = 5
@@ -91,7 +91,7 @@ Partial Class ListaOrdenes
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(51, 80)
+        Me.Label6.Location = New System.Drawing.Point(27, 80)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(76, 16)
         Me.Label6.TabIndex = 13
@@ -158,6 +158,7 @@ Partial Class ListaOrdenes
         Me.Label5.Size = New System.Drawing.Size(103, 16)
         Me.Label5.TabIndex = 20
         Me.Label5.Text = "Solo Pendientes"
+        Me.Label5.Visible = False
         '
         'chkActivo
         '
@@ -168,13 +169,14 @@ Partial Class ListaOrdenes
         Me.chkActivo.Size = New System.Drawing.Size(15, 14)
         Me.chkActivo.TabIndex = 19
         Me.chkActivo.UseVisualStyleBackColor = True
+        Me.chkActivo.Visible = False
         '
         'ListaOrdenes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.ClientSize = New System.Drawing.Size(882, 471)
+        Me.ClientSize = New System.Drawing.Size(882, 499)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.chkActivo)
         Me.Controls.Add(Me.btnEliminar)
@@ -186,6 +188,7 @@ Partial Class ListaOrdenes
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DGOrdenes)
         Me.Name = "ListaOrdenes"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Lista de Productos"
         CType(Me.DGOrdenes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

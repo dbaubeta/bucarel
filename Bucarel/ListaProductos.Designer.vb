@@ -22,8 +22,8 @@ Partial Class ListaProductos
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.DGProductos = New System.Windows.Forms.DataGridView()
         Me.txtPrecio = New System.Windows.Forms.TextBox()
         Me.chkActivo = New System.Windows.Forms.CheckBox()
@@ -47,36 +47,36 @@ Partial Class ListaProductos
         Me.DGProductos.AllowUserToDeleteRows = False
         Me.DGProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DGProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGProductos.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGProductos.DefaultCellStyle = DataGridViewCellStyle4
         Me.DGProductos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DGProductos.Location = New System.Drawing.Point(54, 162)
+        Me.DGProductos.Location = New System.Drawing.Point(30, 162)
         Me.DGProductos.MultiSelect = False
         Me.DGProductos.Name = "DGProductos"
         Me.DGProductos.RowHeadersVisible = False
         Me.DGProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DGProductos.Size = New System.Drawing.Size(703, 297)
+        Me.DGProductos.Size = New System.Drawing.Size(727, 297)
         Me.DGProductos.TabIndex = 0
         '
         'txtPrecio
         '
         Me.txtPrecio.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPrecio.Location = New System.Drawing.Point(624, 90)
+        Me.txtPrecio.Location = New System.Drawing.Point(600, 90)
         Me.txtPrecio.Name = "txtPrecio"
         Me.txtPrecio.Size = New System.Drawing.Size(100, 22)
         Me.txtPrecio.TabIndex = 2
@@ -85,7 +85,7 @@ Partial Class ListaProductos
         '
         Me.chkActivo.AccessibleDescription = ""
         Me.chkActivo.AutoSize = True
-        Me.chkActivo.Location = New System.Drawing.Point(742, 95)
+        Me.chkActivo.Location = New System.Drawing.Point(723, 95)
         Me.chkActivo.Name = "chkActivo"
         Me.chkActivo.Size = New System.Drawing.Size(15, 14)
         Me.chkActivo.TabIndex = 3
@@ -95,7 +95,7 @@ Partial Class ListaProductos
         '
         Me.txtCodigo.Enabled = False
         Me.txtCodigo.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCodigo.Location = New System.Drawing.Point(54, 90)
+        Me.txtCodigo.Location = New System.Drawing.Point(30, 90)
         Me.txtCodigo.Name = "txtCodigo"
         Me.txtCodigo.Size = New System.Drawing.Size(71, 22)
         Me.txtCodigo.TabIndex = 5
@@ -103,7 +103,7 @@ Partial Class ListaProductos
         'txtNombre
         '
         Me.txtNombre.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNombre.Location = New System.Drawing.Point(131, 90)
+        Me.txtNombre.Location = New System.Drawing.Point(107, 90)
         Me.txtNombre.Name = "txtNombre"
         Me.txtNombre.Size = New System.Drawing.Size(487, 22)
         Me.txtNombre.TabIndex = 1
@@ -122,7 +122,7 @@ Partial Class ListaProductos
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(51, 71)
+        Me.Label2.Location = New System.Drawing.Point(27, 71)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(48, 16)
         Me.Label2.TabIndex = 8
@@ -132,7 +132,7 @@ Partial Class ListaProductos
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(128, 71)
+        Me.Label3.Location = New System.Drawing.Point(104, 71)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(53, 16)
         Me.Label3.TabIndex = 9
@@ -142,7 +142,7 @@ Partial Class ListaProductos
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(621, 71)
+        Me.Label4.Location = New System.Drawing.Point(597, 71)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(45, 16)
         Me.Label4.TabIndex = 10
@@ -152,7 +152,7 @@ Partial Class ListaProductos
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(727, 73)
+        Me.Label5.Location = New System.Drawing.Point(707, 71)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(50, 16)
         Me.Label5.TabIndex = 11
@@ -161,16 +161,16 @@ Partial Class ListaProductos
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(131, 134)
+        Me.txtBuscar.Location = New System.Drawing.Point(107, 134)
         Me.txtBuscar.Name = "txtBuscar"
-        Me.txtBuscar.Size = New System.Drawing.Size(626, 22)
+        Me.txtBuscar.Size = New System.Drawing.Size(646, 22)
         Me.txtBuscar.TabIndex = 5
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(51, 137)
+        Me.Label6.Location = New System.Drawing.Point(27, 137)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(76, 16)
         Me.Label6.TabIndex = 13
@@ -222,6 +222,7 @@ Partial Class ListaProductos
         Me.Controls.Add(Me.txtPrecio)
         Me.Controls.Add(Me.DGProductos)
         Me.Name = "ListaProductos"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Lista de Productos"
         CType(Me.DGProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

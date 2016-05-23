@@ -55,9 +55,9 @@
         p.fecha = Now
         o.orden = p
         o.ShowDialog()
-        ctrl.guardarorden(p)
+        If o.save Then ctrl.guardarorden(p)
         o.Dispose()
-
+        Me.DGOrdenes.Refresh()
 
 
     End Sub
@@ -68,9 +68,22 @@
         Dim o As New OrdenTrabajo
         o.orden = p
         o.ShowDialog()
-        ctrl.guardarorden(p)
+        If o.save Then ctrl.guardarorden(p)
         o.Dispose()
         Me.DGOrdenes.Refresh()
+
+
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+
+
+        Dim p As Entidades.ordentrabajo = DirectCast(DGOrdenes.CurrentRow.DataBoundItem, Entidades.ordentrabajo)
+        Dim result As Integer = MessageBox.Show("Esta seguro que quiere eliminar la orden de trabajo?", "Eliminar Orden", MessageBoxButtons.YesNo)
+        If result = DialogResult.Yes Then
+            ctrl.eliminarorden(p)
+            ctrl.llenarGrillaordenes(Me.DGOrdenes)
+        End If
 
 
     End Sub

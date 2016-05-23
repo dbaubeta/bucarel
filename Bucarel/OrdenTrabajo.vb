@@ -56,6 +56,8 @@
 
 
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
+
+
         Me.orden.nombre = Me.txtNombre.Text
         Me.orden.fecha = Me.DateTimePicker1.Value
         Me.orden.producto = DirectCast(Me.cbproductos.SelectedItem, Entidades.producto)

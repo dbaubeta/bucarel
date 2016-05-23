@@ -57,9 +57,9 @@ Partial Class OrdenMaterial
         Me.Label1.Font = New System.Drawing.Font("Arial", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(12, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(279, 34)
+        Me.Label1.Size = New System.Drawing.Size(264, 34)
         Me.Label1.TabIndex = 43
-        Me.Label1.Text = "Ordenes de trabajo"
+        Me.Label1.Text = "Datos del Material"
         '
         'txtcantidad
         '
@@ -119,7 +119,7 @@ Partial Class OrdenMaterial
         Me.Controls.Add(Me.Label1)
         Me.Name = "OrdenMaterial"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "OrdenMaterial"
+        Me.Text = "Datos del material"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
