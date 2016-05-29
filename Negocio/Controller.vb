@@ -16,13 +16,36 @@
 
     End Sub
 
-    Public Sub llenarComboboxTalles(ByRef c As Object, Optional minuslist As List(Of Entidades.talle) = Nothing)
+    Public Sub llenarComboboxTalles(ByRef c As Object, p As Entidades.producto, Optional minuslist As List(Of Entidades.talle) = Nothing)
 
         Dim temp As List(Of Entidades.talle)
 
         c.DisplayMember = "nombre"
         c.ValueMember = "id"
-        temp = bd.obtenertalles
+        temp = p.talles 'bd.obtenertalles
+
+        If Not IsNothing(minuslist) Then
+            For Each m As Entidades.talle In minuslist
+                temp.RemoveAll(Function(i) i.ID = m.ID)
+            Next
+        End If
+        c.datasource = temp
+
+    End Sub
+
+    Public Sub llenarComboboxTalles(ByRef c As Object, o As Entidades.ordentrabajo, Optional minuslist As List(Of Entidades.talle) = Nothing)
+
+        Dim temp As New List(Of Entidades.talle)
+
+        c.DisplayMember = "nombre"
+        c.ValueMember = "id"
+
+        For Each ot As Entidades.ordenTalle In o.listaTalles
+            Dim t As New Entidades.talle
+            t.ID = ot.IDTalle
+            t.nombre = ot.nombre
+            temp.Add(t)
+        Next
 
         If Not IsNothing(minuslist) Then
             For Each m As Entidades.talle In minuslist
@@ -34,11 +57,19 @@
     End Sub
 
 
+
     Public Sub llenarComboboxProductos(ByRef c As Object)
 
         c.DisplayMember = "nombre"
         c.ValueMember = "id"
-        c.datasource = bd.obtenerProductos
+
+        Dim l As List(Of Entidades.producto) = bd.obtenerProductos
+        For Each p In l
+            bd.ObtenerTallesParaProducto(p)
+        Next
+
+        c.datasource = l
+
 
     End Sub
 
@@ -63,14 +94,22 @@
     Public Sub llenarGrillaProductos(ByRef g As Object)
 
         g.AutoGenerateColumns = True
-        g.datasource = bd.obtenerProductos
 
+        Dim l As List(Of Entidades.producto) = bd.obtenerProductos
+        For Each p In l
+            bd.ObtenerTallesParaProducto(p)
+        Next
+        g.datasource = l
     End Sub
 
     Public Sub llenarGrillaProductos(ByRef g As Object, search As String)
 
         g.AutoGenerateColumns = True
-        g.datasource = bd.obtenerProductosPorNombre(search)
+        Dim l As List(Of Entidades.producto) = bd.obtenerProductosPorNombre(search)
+        For Each p In l
+            bd.ObtenerTallesParaProducto(p)
+        Next
+        g.datasource = l
 
     End Sub
 

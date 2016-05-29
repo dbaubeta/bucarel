@@ -133,6 +133,7 @@
         Dim pant As New Bucarel.OrdenTalle
         om.cantidad = 0
         pant.ordenTalle = om
+        pant.producto = DirectCast(Me.cbproductos.SelectedItem, Entidades.producto)
         Dim minus As New List(Of Entidades.talle)
         For Each xm As Entidades.ordenTalle In Me.DGTalles.DataSource
             Dim m As New Entidades.talle
@@ -169,7 +170,8 @@
         om.nombre = DirectCast(DGTalles.CurrentRow.DataBoundItem, Entidades.ordenTalle).nombre
 
         pant.ordenTalle = om
-        pant.cbTalles.Enabled = False
+        pant.producto = DirectCast(Me.cbproductos.SelectedItem, Entidades.producto)
+        pant.cbtalles.Enabled = False
         pant.ShowDialog()
         If pant.save Then
             DirectCast(DGTalles.CurrentRow.DataBoundItem, Entidades.ordenTalle).cantidad = om.cantidad
@@ -192,6 +194,7 @@
         oe.cantidad = 0
         oe.fecha = Now
         pant.ordenEntrega = oe
+        pant.orden = Me.orden
 
         pant.ShowDialog()
         If pant.save Then
@@ -221,6 +224,8 @@
         oe.nombre = DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenEntrega).nombre
 
         pant.ordenEntrega = oe
+        pant.orden = Me.orden
+
         pant.ShowDialog()
         If pant.save Then
             DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenEntrega).cantidad = oe.cantidad
@@ -242,6 +247,10 @@
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         Me.save = False
         Me.Hide()
+
+    End Sub
+
+    Private Sub cbproductos_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbproductos.SelectedIndexChanged
 
     End Sub
 End Class

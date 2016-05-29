@@ -76,8 +76,9 @@ Public Class BD
 
     Public Function obtenerProductos() As List(Of Entidades.producto)
         Dim l As New List(Of Entidades.producto)
+
         'cn.Open()
-        Dim c As New NpgsqlCommand("select id, nombre, precio, activo from producto", cn)
+        Dim c As New NpgsqlCommand("select id, nombre, precio, activo from producto order by id", cn)
         Dim r As NpgsqlDataReader = c.ExecuteReader
 
         Do While r.Read
@@ -93,11 +94,37 @@ Public Class BD
 
         r.Close()
 
+
+
         Return l
 
-        'cn.Close()
+
 
     End Function
+
+
+    Public Sub ObtenerTallesParaProducto(ByRef p As Entidades.producto)
+
+        Dim c As New NpgsqlCommand("select t.id id, t.nombre nombre from productotalle pt join talle t on t.id = pt.talleid where productoid = :productoid order by orden", cn)
+        c.Parameters.AddWithValue("productoid", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
+        c.Prepare()
+
+        Dim rt As NpgsqlDataReader = c.ExecuteReader
+
+        Do While rt.Read
+
+            Dim t As New Entidades.talle
+            t.ID = rt.Item("id")
+            t.nombre = rt.Item("nombre")
+            p.talles.Add(t)
+
+        Loop
+
+        rt.Close()
+
+
+    End Sub
+
 
     Public Function obtenerProductosPorNombre(search As String) As List(Of Entidades.producto)
         Dim l As New List(Of Entidades.producto)
@@ -149,8 +176,22 @@ Public Class BD
         c.Parameters.AddWithValue("precio", NpgsqlTypes.NpgsqlDbType.Numeric, p.precio)
         c.Parameters.AddWithValue("activo", NpgsqlTypes.NpgsqlDbType.Boolean, p.activo)
         c.Parameters.AddWithValue("ID", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
-
         c.ExecuteNonQuery()
+
+        c = New NpgsqlCommand("delete from productotalle where productoid = :productoid", cn)
+        c.Parameters.AddWithValue("productoid", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
+        c.ExecuteNonQuery()
+
+
+        For Each t As Entidades.talle In p.talles
+
+            c = New NpgsqlCommand("insert into productotalle (productoid, talleid) values(:productoid,:talleid)", cn)
+            c.Parameters.AddWithValue("productoid", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
+            c.Parameters.AddWithValue("talleid", NpgsqlTypes.NpgsqlDbType.Integer, t.ID)
+            c.ExecuteNonQuery()
+
+        Next
+
 
     End Sub
 

@@ -23,6 +23,7 @@
             Me.txtPrecio.Text = DirectCast(DGProductos.CurrentRow.DataBoundItem, Entidades.producto).precio.ToString
             Me.chkActivo.Checked = DirectCast(DGProductos.CurrentRow.DataBoundItem, Entidades.producto).activo
             Me.txtNombre.Focus()
+            Me.CargarTalles()
         End If
     End Sub
 
@@ -84,6 +85,10 @@
             p.precio = Double.Parse(Me.txtPrecio.Text)
             p.activo = Me.chkActivo.Checked
 
+            For Each i In Me.chklTalles.CheckedItems
+                p.talles.Add(DirectCast(i, Entidades.talle))
+            Next
+
             ctrl.InsertarProducto(p)
 
         Else
@@ -92,6 +97,10 @@
             p.nombre = Me.txtNombre.Text
             p.precio = Double.Parse(Me.txtPrecio.Text)
             p.activo = Me.chkActivo.Checked
+            p.talles.Clear()
+            For Each i In Me.chklTalles.CheckedItems
+                p.talles.Add(DirectCast(i, Entidades.talle))
+            Next
 
             ctrl.ModificarProducto(p)
 
@@ -101,6 +110,25 @@
 
     End Sub
 
+    Private Sub CargarTalles()
 
+        Dim l As New List(Of Entidades.talle)
+
+        Me.chklTalles.Items.Clear()
+        Me.chklTalles.DisplayMember = "nombre"
+
+        l = ctrl.obtenerTalles
+        For Each t In l
+            Me.chklTalles.Items.Add(t)
+        Next
+
+        For Each t In DirectCast(DGProductos.CurrentRow.DataBoundItem, Entidades.producto).talles
+
+            For r As Integer = 0 To Me.chklTalles.Items.Count - 1
+                If DirectCast(chklTalles.Items(r), Entidades.talle).ID = t.ID Then Me.chklTalles.SetItemChecked(r, True)
+            Next
+        Next
+
+    End Sub
 
 End Class

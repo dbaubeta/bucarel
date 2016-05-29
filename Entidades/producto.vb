@@ -40,4 +40,25 @@
         End Set
     End Property
 
+
+    Private _talles As List(Of Entidades.talle)
+    Public Property talles() As List(Of Entidades.talle)
+        Get
+            Return _talles
+        End Get
+        Set(ByVal value As List(Of Entidades.talle))
+            _talles = value
+        End Set
+    End Property
+
+
+    Public Sub New()
+
+        Me.talles = New List(Of talle)
+
+
+    End Sub
+
+
+
 End Class

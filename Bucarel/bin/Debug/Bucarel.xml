@@ -35,6 +35,10 @@ Bucarel
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:Bucarel.My.Resources.Resources.Excel_icon">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:Bucarel.My.Resources.Resources.Materiales">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

@@ -38,6 +38,8 @@ Partial Class ListaProductos
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnguardar = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.chklTalles = New System.Windows.Forms.CheckedListBox()
         CType(Me.DGProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -65,7 +67,7 @@ Partial Class ListaProductos
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DGProductos.DefaultCellStyle = DataGridViewCellStyle4
         Me.DGProductos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DGProductos.Location = New System.Drawing.Point(30, 162)
+        Me.DGProductos.Location = New System.Drawing.Point(30, 280)
         Me.DGProductos.MultiSelect = False
         Me.DGProductos.Name = "DGProductos"
         Me.DGProductos.RowHeadersVisible = False
@@ -114,9 +116,9 @@ Partial Class ListaProductos
         Me.Label1.Font = New System.Drawing.Font("Arial", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(24, 19)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(277, 34)
+        Me.Label1.Size = New System.Drawing.Size(247, 34)
         Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Lista de Productos"
+        Me.Label1.Text = "Lista de Prendas"
         '
         'Label2
         '
@@ -161,7 +163,7 @@ Partial Class ListaProductos
         'txtBuscar
         '
         Me.txtBuscar.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBuscar.Location = New System.Drawing.Point(107, 134)
+        Me.txtBuscar.Location = New System.Drawing.Point(107, 252)
         Me.txtBuscar.Name = "txtBuscar"
         Me.txtBuscar.Size = New System.Drawing.Size(646, 22)
         Me.txtBuscar.TabIndex = 5
@@ -170,7 +172,7 @@ Partial Class ListaProductos
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(27, 137)
+        Me.Label6.Location = New System.Drawing.Point(27, 255)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(76, 16)
         Me.Label6.TabIndex = 13
@@ -181,7 +183,7 @@ Partial Class ListaProductos
         Me.btnAgregar.BackgroundImage = Global.Bucarel.My.Resources.Resources.Button_Add_icon32
         Me.btnAgregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnAgregar.Location = New System.Drawing.Point(763, 162)
+        Me.btnAgregar.Location = New System.Drawing.Point(763, 280)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(107, 42)
         Me.btnAgregar.TabIndex = 14
@@ -194,7 +196,7 @@ Partial Class ListaProductos
         Me.btnguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnguardar.Image = Global.Bucarel.My.Resources.Resources.Treetog_I_Floppy_Small
         Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(763, 420)
+        Me.btnguardar.Location = New System.Drawing.Point(763, 538)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(107, 39)
         Me.btnguardar.TabIndex = 15
@@ -202,11 +204,32 @@ Partial Class ListaProductos
         Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnguardar.UseVisualStyleBackColor = True
         '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(60, 160)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(41, 16)
+        Me.Label7.TabIndex = 16
+        Me.Label7.Text = "Talles"
+        '
+        'chklTalles
+        '
+        Me.chklTalles.CheckOnClick = True
+        Me.chklTalles.FormattingEnabled = True
+        Me.chklTalles.Location = New System.Drawing.Point(107, 118)
+        Me.chklTalles.Name = "chklTalles"
+        Me.chklTalles.Size = New System.Drawing.Size(646, 109)
+        Me.chklTalles.TabIndex = 17
+        '
         'ListaProductos
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(882, 471)
+        Me.ClientSize = New System.Drawing.Size(882, 589)
+        Me.Controls.Add(Me.chklTalles)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.Label6)
@@ -223,12 +246,12 @@ Partial Class ListaProductos
         Me.Controls.Add(Me.DGProductos)
         Me.Name = "ListaProductos"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Lista de Productos"
-        CType(Me.DGProductos, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.Text = "Lista de Prendas"
+        CType(Me.DGProductos,System.ComponentModel.ISupportInitialize).EndInit
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
+End Sub
     Friend WithEvents DGProductos As System.Windows.Forms.DataGridView
     Friend WithEvents txtPrecio As System.Windows.Forms.TextBox
     Friend WithEvents chkActivo As System.Windows.Forms.CheckBox
@@ -243,5 +266,7 @@ Partial Class ListaProductos
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents btnAgregar As System.Windows.Forms.Button
     Friend WithEvents btnguardar As System.Windows.Forms.Button
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents chklTalles As System.Windows.Forms.CheckedListBox
 
 End Class

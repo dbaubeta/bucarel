@@ -1,6 +1,16 @@
 ﻿Public Class OrdenEntrega
     Dim ctrl As New Negocio.Controller
 
+    Private _orden As Entidades.ordentrabajo
+    Public Property orden() As Entidades.ordentrabajo
+        Get
+            Return _orden
+        End Get
+        Set(ByVal value As Entidades.ordentrabajo)
+            _orden = value
+        End Set
+    End Property
+
     Private _ordenEntrega As Entidades.ordenEntrega
     Public Property ordenEntrega() As Entidades.ordenEntrega
         Get
@@ -35,7 +45,7 @@
 
     Private Sub OrdenEntrega_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ctrl.llenarComboboxTalles(Me.cbtalles, minuslist)
+        ctrl.llenarComboboxTalles(Me.cbtalles, Me.orden, minuslist)
         Me.txtcantidad.Text = 0
         Label1.Text = "Ingresar Entrega en orden"
         If Me.ordenEntrega.IDTalle <> 0 Then

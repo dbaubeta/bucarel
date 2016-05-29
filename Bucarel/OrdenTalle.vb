@@ -2,6 +2,18 @@
 
     Dim ctrl As New Negocio.Controller
 
+
+    Private _producto As Entidades.producto
+    Public Property producto() As Entidades.producto
+        Get
+            Return _producto
+        End Get
+        Set(ByVal value As Entidades.producto)
+            _producto = value
+        End Set
+    End Property
+
+
     Private _ordenTalle As Entidades.ordenTalle
     Public Property ordenTalle() As Entidades.ordenTalle
         Get
@@ -36,7 +48,7 @@
 
     Private Sub OrdenTalle_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        ctrl.llenarComboboxTalles(Me.cbTalles, minuslist)
+        ctrl.llenarComboboxTalles(Me.cbtalles, Me.producto, minuslist)
         Me.txtcantidad.Text = 0
         Label1.Text = "Ingresar Talle en orden"
         If Me.ordenTalle.IDTalle <> 0 Then
