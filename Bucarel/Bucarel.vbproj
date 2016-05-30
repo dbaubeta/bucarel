@@ -76,6 +76,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ListaStockProductos.Designer.vb">
+      <DependentUpon>ListaStockProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListaStockProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaStockMateriales.Designer.vb">
+      <DependentUpon>ListaStockMateriales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ListaStockMateriales.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ListaTalleres.Designer.vb">
       <DependentUpon>ListaTalleres.vb</DependentUpon>
     </Compile>
@@ -128,10 +140,10 @@
     <Compile Include="OrdenTalle.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrdenEntrega.Designer.vb">
-      <DependentUpon>OrdenEntrega.vb</DependentUpon>
+    <Compile Include="OrdenRecepcion.Designer.vb">
+      <DependentUpon>OrdenRecepcion.vb</DependentUpon>
     </Compile>
-    <Compile Include="OrdenEntrega.vb">
+    <Compile Include="OrdenRecepcion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OrdenMaterial.Designer.vb">
@@ -152,8 +164,26 @@
     <Compile Include="ReporteStock.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="StockProducto.Designer.vb">
+      <DependentUpon>StockProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StockProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockMaterial.Designer.vb">
+      <DependentUpon>StockMaterial.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StockMaterial.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ListaStockProductos.resx">
+      <DependentUpon>ListaStockProductos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaStockMateriales.resx">
+      <DependentUpon>ListaStockMateriales.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ListaTalleres.resx">
       <DependentUpon>ListaTalleres.vb</DependentUpon>
     </EmbeddedResource>
@@ -178,8 +208,8 @@
     <EmbeddedResource Include="OrdenTalle.resx">
       <DependentUpon>OrdenTalle.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrdenEntrega.resx">
-      <DependentUpon>OrdenEntrega.vb</DependentUpon>
+    <EmbeddedResource Include="OrdenRecepcion.resx">
+      <DependentUpon>OrdenRecepcion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdenMaterial.resx">
       <DependentUpon>OrdenMaterial.vb</DependentUpon>
@@ -189,6 +219,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ReporteStock.resx">
       <DependentUpon>ReporteStock.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockProducto.resx">
+      <DependentUpon>StockProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockMaterial.resx">
+      <DependentUpon>StockMaterial.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

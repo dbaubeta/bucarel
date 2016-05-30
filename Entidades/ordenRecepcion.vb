@@ -1,4 +1,4 @@
-﻿Public Class ordenEntrega
+﻿Public Class ordenRecepcion
 
     Private _ID As Long
     Public Property ID() As Long

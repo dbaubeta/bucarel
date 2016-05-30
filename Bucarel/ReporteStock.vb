@@ -5,6 +5,9 @@ Public Class ReporteStock
     Dim ctrl As New Negocio.Controller
 
     Private Sub ReporteStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Me.txtArchivo.Text = System.IO.Directory.GetCurrentDirectory + "\StockProductos.xlsx"
+
     End Sub
 
 
@@ -102,8 +105,11 @@ Public Class ReporteStock
 
         End With
 
-        xlWorkBook.SaveAs("F:\git\bucarel\excel\StockProductos.xlsx", Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, misValue, misValue, _
+
+
+        xlWorkBook.SaveAs(Me.txtArchivo.Text, Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, misValue, misValue, _
          Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue)
+
         xlWorkBook.Close(True, misValue, misValue)
         xlApp.Quit()
 
@@ -111,13 +117,24 @@ Public Class ReporteStock
         releaseObject(xlWorkBook)
         releaseObject(xlApp)
 
-        MessageBox.Show("Archivo creado")
+        RunCommandCom(Me.txtArchivo.Text, "", False)
+
+        '4MessageBox.Show("Archivo creado")
 
         l = Nothing
         tl = Nothing
 
     End Sub
 
+
+    Shared Sub RunCommandCom(command As String, arguments As String, permanent As Boolean)
+        Dim p As Process = New Process()
+        Dim pi As ProcessStartInfo = New ProcessStartInfo()
+        pi.Arguments = " " + If(permanent = True, "/K", "/C") + " " + command + " " + arguments
+        pi.FileName = "cmd.exe"
+        p.StartInfo = pi
+        p.Start()
+    End Sub
 
     Private Sub GenerarExcelStockMateriales()
 

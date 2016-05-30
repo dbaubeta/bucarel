@@ -5,7 +5,7 @@ Public Class BD
     Dim cn As Npgsql.NpgsqlConnection
 
     Public Sub Conectar()
-        cn = New NpgsqlConnection("Host=localhost;Username=bucarel;Password=bucarel2015;Database=bucarel")
+        cn = New NpgsqlConnection("Host=localhost;Username=bucarel;Password=bucarel2015;Database=bucarel;")
         cn.Open()
     End Sub
 
@@ -21,7 +21,7 @@ Public Class BD
                                     "join producto p on p.id = sp.productoid " + _
                                     "join talle t on t.id = sp.talleid " + _
                                     "union " + _
-                                    "select productoid, p.nombre productonombre, sp.fecha, talleid, t.nombre tallenombre, cantidad stock from ordenentrega sp  " + _
+                                    "select productoid, p.nombre productonombre, sp.fecha, talleid, t.nombre tallenombre, cantidad stock from ordenrecepcion sp  " + _
                                     "join ordentrabajo o on o.id = sp.ordenid " + _
                                     "join producto p on p.id = o.productoid " + _
                                     "join talle t on t.id = sp.talleid) as x " + _
@@ -73,6 +73,112 @@ Public Class BD
 
     End Function
 
+
+    Public Function obtenerStockMateriales() As List(Of Entidades.StockMaterial)
+        Dim l As New List(Of Entidades.StockMaterial)
+
+        'cn.Open()
+        Dim c As New NpgsqlCommand("select sm.id, fecha, materialid, nombre, cantidad from stockmaterial sm join material m on m.id = sm.materialid order by id", cn)
+        Dim r As NpgsqlDataReader = c.ExecuteReader
+
+        Do While r.Read
+
+            Dim p As New Entidades.StockMaterial
+            p.ID = r.Item("id")
+            p.materialid = r.Item("materialid")
+            p.nombre = r.Item("nombre")
+            p.fecha = r.Item("fecha")
+            p.cantidad = r.Item("cantidad")
+            l.Add(p)
+
+        Loop
+        r.Close()
+
+        Return l
+
+
+
+    End Function
+
+
+    Public Function obtenerStockMateriales(d As Date) As List(Of Entidades.StockMaterial)
+        Dim l As New List(Of Entidades.StockMaterial)
+
+        'cn.Open()
+        Dim c As New NpgsqlCommand("select sm.id, fecha, materialid, nombre, cantidad from stockmaterial sm join material m on m.id = sm.materialid where fecha = :fecha order by id", cn)
+        c.Parameters.AddWithValue("fecha", NpgsqlTypes.NpgsqlDbType.Date, d)
+        Dim r As NpgsqlDataReader = c.ExecuteReader
+
+        Do While r.Read
+
+            Dim p As New Entidades.StockMaterial
+            p.ID = r.Item("id")
+            p.materialid = r.Item("materialid")
+            p.nombre = r.Item("nombre")
+            p.fecha = r.Item("fecha")
+            p.cantidad = r.Item("cantidad")
+            l.Add(p)
+
+        Loop
+        r.Close()
+
+        Return l
+
+    End Function
+
+
+
+    Public Function obtenerStockProductos() As List(Of Entidades.StockProducto)
+        Dim l As New List(Of Entidades.StockProducto)
+
+        'cn.Open()
+        Dim c As New NpgsqlCommand("select sm.id, fecha, productoid, nombre, cantidad from stockproducto sm join producto m on m.id = sm.productoid order by id", cn)
+        Dim r As NpgsqlDataReader = c.ExecuteReader
+
+        Do While r.Read
+
+            Dim p As New Entidades.StockProducto
+            p.ID = r.Item("id")
+            p.productoid = r.Item("productoid")
+            p.nombre = r.Item("nombre")
+            p.fecha = r.Item("fecha")
+            p.cantidad = r.Item("cantidad")
+            l.Add(p)
+
+        Loop
+        r.Close()
+
+        Return l
+
+
+
+    End Function
+
+
+    Public Function obtenerStockProductos(d As Date) As List(Of Entidades.StockProducto)
+        Dim l As New List(Of Entidades.StockProducto)
+
+        'cn.Open()
+        Dim c As New NpgsqlCommand("select sm.id, fecha, productoid, nombre, cantidad from stockproducto sm join producto m on m.id = sm.productoid where fecha = :fecha order by id", cn)
+        c.Parameters.AddWithValue("fecha", NpgsqlTypes.NpgsqlDbType.Date, d)
+        Dim r As NpgsqlDataReader = c.ExecuteReader
+
+        Do While r.Read
+
+            Dim p As New Entidades.StockProducto
+            p.ID = r.Item("id")
+            p.productoid = r.Item("productoid")
+            p.nombre = r.Item("nombre")
+            p.fecha = r.Item("fecha")
+            p.cantidad = r.Item("cantidad")
+            l.Add(p)
+
+        Loop
+        r.Close()
+
+        Return l
+
+    End Function
 
     Public Function obtenerProductos() As List(Of Entidades.producto)
         Dim l As New List(Of Entidades.producto)
@@ -360,7 +466,7 @@ Public Class BD
     Public Function obtenerOrdenes() As List(Of Entidades.ordentrabajo)
         Dim l As New List(Of Entidades.ordentrabajo)
         'cn.Open()
-        Dim c As New NpgsqlCommand("select o.id, o.nombre, o.fecha, o.tallerid, t.nombre tallernombre, o.productoid productoid, p.nombre productonombre from ordentrabajo o join taller t on t.id = o.tallerid join producto p on p.id = o.productoid", cn)
+        Dim c As New NpgsqlCommand("select o.id, o.nombre, o.fecha, o.tallerid, t.nombre tallernombre, o.productoid productoid, p.nombre productonombre from ordentrabajo o join taller t on t.id = o.tallerid join producto p on p.id = o.productoid order by o.id desc", cn)
         Dim r As NpgsqlDataReader = c.ExecuteReader
 
         Do While r.Read
@@ -378,8 +484,6 @@ Public Class BD
             p.nombre = r.Item("productonombre")
             o.producto = p
             l.Add(o)
-
-            r.Close()
 
         Loop
 
@@ -479,17 +583,17 @@ Public Class BD
             Loop
             mr.Close()
 
-            ' Agregar lista de entregas hechas en la orden
-            Dim ec As New NpgsqlCommand("select oe.id id, oe.talleid talleid, t.nombre nombre , oe.cantidad cantidad, oe.fecha fecha from ordenentrega oe join talle t on t.id = oe.talleid where ordenid = :ordenid", cn)
+            ' Agregar lista de recepciones hechas en la orden
+            Dim ec As New NpgsqlCommand("select oe.id id, oe.talleid talleid, t.nombre nombre , oe.cantidad cantidad, oe.fecha fecha from ordenrecepcion oe join talle t on t.id = oe.talleid where ordenid = :ordenid", cn)
             ec.Parameters.AddWithValue("ordenid", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
             ec.Prepare()
 
             Dim er As NpgsqlDataReader = ec.ExecuteReader
-            Dim el As New List(Of Entidades.ordenEntrega)
+            Dim el As New List(Of Entidades.ordenRecepcion)
 
             Do While er.Read
 
-                Dim oe As New Entidades.ordenEntrega
+                Dim oe As New Entidades.ordenRecepcion
                 oe.ID = er.Item("id")
                 oe.IDTalle = er.Item("talleid")
                 oe.nombre = er.Item("nombre")
@@ -502,7 +606,7 @@ Public Class BD
 
             p.listaTalles = tl
             p.listaMateriales = ml
-            p.listaEntregas = el
+            p.listarecepciones = el
 
 
         Next
@@ -588,13 +692,13 @@ Public Class BD
 
 
         ' Borrar todos las entregas de la orden para volver a grabarlos.
-        Dim eom As New NpgsqlCommand("delete from ordenentrega where ordenid = :id", cn)
+        Dim eom As New NpgsqlCommand("delete from ordenrecepcion where ordenid = :id", cn)
         eom.Parameters.AddWithValue("id", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
         eom.ExecuteNonQuery()
 
         ' Grabar los Talles de la orden
-        For Each oe As Entidades.ordenEntrega In p.listaEntregas
-            Dim c As New NpgsqlCommand("insert into ordenentrega (ordenid, fecha, talleid, cantidad) values(:ordenid, :fecha, :talleid, :cantidad) returning id", cn)
+        For Each oe As Entidades.ordenRecepcion In p.listaRecepciones
+            Dim c As New NpgsqlCommand("insert into ordenrecepcion (ordenid, fecha, talleid, cantidad) values(:ordenid, :fecha, :talleid, :cantidad) returning id", cn)
             c.Parameters.AddWithValue("ordenid", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
             c.Parameters.AddWithValue("fecha", NpgsqlTypes.NpgsqlDbType.Date, oe.fecha)
             c.Parameters.AddWithValue("talleid", NpgsqlTypes.NpgsqlDbType.Integer, oe.IDTalle)
@@ -614,6 +718,91 @@ Public Class BD
 
 
     End Sub
+
+
+    ' ===================================================================================================================================================
+    ' Stock Material
+
+    Public Sub InsertarStockMaterial(ByRef p As Entidades.StockMaterial)
+
+        Dim c As New NpgsqlCommand("insert into stockmaterial (materialid, fecha, cantidad) values(:materialid, :fecha, :cantidad) returning id", cn)
+        c.Parameters.AddWithValue("materialid", NpgsqlTypes.NpgsqlDbType.Integer, p.materialid)
+        c.Parameters.AddWithValue("fecha", NpgsqlTypes.NpgsqlDbType.Date, p.fecha)
+        c.Parameters.AddWithValue("cantidad", NpgsqlTypes.NpgsqlDbType.Integer, p.cantidad)
+
+
+        Dim r As NpgsqlDataReader = c.ExecuteReader()
+        Do While r.Read
+            p.ID = r.GetInt32(0)
+        Loop
+        r.Close()
+
+    End Sub
+
+    Public Sub ModificarStockMaterial(ByRef p As Entidades.StockMaterial)
+
+        Dim c As New NpgsqlCommand("update stockmaterial set materialid = :materialid, fecha = :fecha, cantidad= :cantidad where id = :id", cn)
+        c.Parameters.AddWithValue("materialid", NpgsqlTypes.NpgsqlDbType.Integer, p.materialid)
+        c.Parameters.AddWithValue("fecha", NpgsqlTypes.NpgsqlDbType.Date, p.fecha)
+        c.Parameters.AddWithValue("cantidad", NpgsqlTypes.NpgsqlDbType.Integer, p.cantidad)
+        c.Parameters.AddWithValue("ID", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
+        c.ExecuteNonQuery()
+
+    End Sub
+
+    Public Sub EliminarStockMaterial(ByRef p As Entidades.StockMaterial)
+
+        ' Borrar el registro de todos los materiales de la orden para volver a grabarlos.
+        Dim dom As New NpgsqlCommand("delete from stockmaterial where id = :id", cn)
+        dom.Parameters.AddWithValue("id", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
+        dom.ExecuteNonQuery()
+
+
+    End Sub
+
+
+
+
+    ' ===================================================================================================================================================
+    ' Stock Producto
+
+    Public Sub InsertarStockProducto(ByRef p As Entidades.StockProducto)
+
+        Dim c As New NpgsqlCommand("insert into stockproducto (productoid, fecha, cantidad) values(:productoid, :fecha, :cantidad) returning id", cn)
+        c.Parameters.AddWithValue("productoid", NpgsqlTypes.NpgsqlDbType.Integer, p.productoid)
+        c.Parameters.AddWithValue("fecha", NpgsqlTypes.NpgsqlDbType.Date, p.fecha)
+        c.Parameters.AddWithValue("cantidad", NpgsqlTypes.NpgsqlDbType.Integer, p.cantidad)
+
+
+        Dim r As NpgsqlDataReader = c.ExecuteReader()
+        Do While r.Read
+            p.ID = r.GetInt32(0)
+        Loop
+        r.Close()
+
+    End Sub
+
+    Public Sub ModificarStockProducto(ByRef p As Entidades.StockProducto)
+
+        Dim c As New NpgsqlCommand("update stockproducto set productoid = :productoid, fecha = :fecha, cantidad= :cantidad where id = :id", cn)
+        c.Parameters.AddWithValue("productoid", NpgsqlTypes.NpgsqlDbType.Integer, p.productoid)
+        c.Parameters.AddWithValue("fecha", NpgsqlTypes.NpgsqlDbType.Date, p.fecha)
+        c.Parameters.AddWithValue("cantidad", NpgsqlTypes.NpgsqlDbType.Integer, p.cantidad)
+        c.Parameters.AddWithValue("ID", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
+        c.ExecuteNonQuery()
+
+    End Sub
+
+    Public Sub EliminarStockProducto(ByRef p As Entidades.StockProducto)
+
+        ' Borrar el registro de todos los materiales de la orden para volver a grabarlos.
+        Dim dom As New NpgsqlCommand("delete from stockproducto where id = :id", cn)
+        dom.Parameters.AddWithValue("id", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
+        dom.ExecuteNonQuery()
+
+
+    End Sub
+
 
 End Class
 

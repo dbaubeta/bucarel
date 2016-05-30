@@ -51,13 +51,13 @@
         End Set
     End Property
 
-    Private _listaEntregas As List(Of Entidades.ordenEntrega)
-    Public Property listaEntregas() As List(Of Entidades.ordenEntrega)
+    Private _listaRecepciones As List(Of Entidades.ordenRecepcion)
+    Public Property listaRecepciones() As List(Of Entidades.ordenRecepcion)
         Get
-            Return _listaEntregas
+            Return _listaRecepciones
         End Get
-        Set(ByVal value As List(Of Entidades.ordenEntrega))
-            _listaEntregas = value
+        Set(ByVal value As List(Of Entidades.ordenRecepcion))
+            _listaRecepciones = value
         End Set
     End Property
 
@@ -86,7 +86,7 @@
 
     Public Sub New()
 
-        Me.listaEntregas = New List(Of ordenEntrega)
+        Me.listaRecepciones = New List(Of ordenRecepcion)
         Me.listaMateriales = New List(Of ordenMaterial)
         Me.listaTalles = New List(Of ordenTalle)
 

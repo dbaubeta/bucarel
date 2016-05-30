@@ -90,6 +90,104 @@
 
     End Sub
 
+    Public Sub llenarGrillaStockMaterial(ByRef g As Object)
+
+        g.AutoGenerateColumns = True
+
+        Dim l As List(Of Entidades.StockMaterial) = bd.obtenerStockMateriales
+        g.datasource = l
+
+        With g
+            .Columns("ID").Visible = False
+            .Columns("fecha").DisplayIndex = 0
+            .Columns("materialid").DisplayIndex = 1
+            .Columns("nombre").DisplayIndex = 2
+            .Columns("cantidad").DisplayIndex = 3
+            .Columns("cantidad").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("fecha").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("materialid").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("nombre").AutoSizeMode = 16 ' Fill
+
+        End With
+
+    End Sub
+
+
+
+
+    Public Sub llenarGrillaStockMaterial(ByRef g As Object, d As Date)
+
+        g.AutoGenerateColumns = True
+
+        Dim l As List(Of Entidades.StockMaterial) = bd.obtenerStockMateriales(d)
+        g.datasource = l
+
+        With g
+            .Columns("ID").Visible = False
+            .Columns("fecha").DisplayIndex = 0
+            .Columns("materialid").DisplayIndex = 1
+            .Columns("nombre").DisplayIndex = 2
+            .Columns("cantidad").DisplayIndex = 3
+            .Columns("cantidad").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("fecha").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("materialid").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("nombre").AutoSizeMode = 16 ' Fill
+
+        End With
+        If g.Rows.Count > 0 Then
+            g.Rows(0).Selected = True
+        End If
+
+
+    End Sub
+
+    Public Sub llenarGrillaStockProducto(ByRef g As Object)
+
+        g.AutoGenerateColumns = True
+
+        Dim l As List(Of Entidades.StockProducto) = bd.obtenerStockProductos
+        g.datasource = l
+
+        With g
+            .Columns("ID").Visible = False
+            .Columns("fecha").DisplayIndex = 0
+            .Columns("productoid").DisplayIndex = 1
+            .Columns("nombre").DisplayIndex = 2
+            .Columns("cantidad").DisplayIndex = 3
+            .Columns("cantidad").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("fecha").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("productoid").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("nombre").AutoSizeMode = 16 ' Fill
+
+        End With
+
+    End Sub
+
+    Public Sub llenarGrillaStockProducto(ByRef g As Object, d As Date)
+
+        g.AutoGenerateColumns = True
+
+        Dim l As List(Of Entidades.StockProducto) = bd.obtenerStockProductos(d)
+        g.datasource = l
+
+        With g
+            .Columns("ID").Visible = False
+            .Columns("fecha").DisplayIndex = 0
+            .Columns("productoid").DisplayIndex = 1
+            .Columns("nombre").DisplayIndex = 2
+            .Columns("cantidad").DisplayIndex = 3
+            .Columns("cantidad").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("fecha").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("productoid").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("nombre").AutoSizeMode = 16 ' Fill
+
+        End With
+        If g.Rows.Count > 0 Then
+            g.Rows(0).Selected = True
+        End If
+
+
+    End Sub
 
     Public Sub llenarGrillaProductos(ByRef g As Object)
 
@@ -237,7 +335,7 @@
 
         g.datasource = Nothing
         g.AutoGenerateColumns = True
-        g.datasource = o.listaEntregas
+        g.datasource = o.listaRecepciones
 
     End Sub
 
@@ -253,6 +351,61 @@
         Return bd.obtenertalles
 
     End Function
+
+
+    ' ================================================================================================================================
+    ' StockMaterial
+
+
+    Public Sub InsertarStockMaterial(ByRef p As Entidades.StockMaterial)
+
+        bd.InsertarStockMaterial(p)
+
+    End Sub
+
+
+    Public Sub ModificarStockMaterial(ByRef p As Entidades.StockMaterial)
+
+        bd.ModificarStockMaterial(p)
+
+    End Sub
+
+
+
+    Public Sub eliminarStockMaterial(ByRef p As Entidades.StockMaterial)
+
+        bd.EliminarStockMaterial(p)
+
+    End Sub
+
+
+
+    ' ================================================================================================================================
+    ' StockMaterial
+
+
+    Public Sub InsertarStockProducto(ByRef p As Entidades.StockProducto)
+
+        bd.InsertarStockProducto(p)
+
+    End Sub
+
+
+    Public Sub ModificarStockProducto(ByRef p As Entidades.StockProducto)
+
+        bd.ModificarStockProducto(p)
+
+    End Sub
+
+
+
+    Public Sub eliminarStockProducto(ByRef p As Entidades.StockProducto)
+
+        bd.EliminarStockProducto(p)
+
+    End Sub
+
+
 
 
 End Class

@@ -21,7 +21,6 @@ F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.ListaOrdenes.resources
 F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.main.resources
 F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.Resources.resources
 F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.OrdenTalle.resources
-F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.OrdenEntrega.resources
 F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.OrdenMaterial.resources
 F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.OrdenTrabajo.resources
 F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.ReporteStock.resources
@@ -29,3 +28,8 @@ F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.vbproj.GenerateResource.Cache
 F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.exe
 F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.xml
 F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.pdb
+F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.OrdenRecepcion.resources
+F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.StockMaterial.resources
+F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.ListaStockProductos.resources
+F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.ListaStockMateriales.resources
+F:\git\Bucarel\Bucarel\obj\Debug\Bucarel.StockProducto.resources

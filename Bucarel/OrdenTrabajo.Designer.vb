@@ -212,9 +212,9 @@ Partial Class OrdenTrabajo
         Me.Label6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(24, 366)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(60, 16)
+        Me.Label6.Size = New System.Drawing.Size(83, 16)
         Me.Label6.TabIndex = 23
-        Me.Label6.Text = "Entregas"
+        Me.Label6.Text = "Recepciones"
         '
         'Label5
         '

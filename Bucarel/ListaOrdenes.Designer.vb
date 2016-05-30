@@ -30,7 +30,6 @@ Partial Class ListaOrdenes
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btnEliminar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
-        Me.btnguardar = New System.Windows.Forms.Button()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.chkActivo = New System.Windows.Forms.CheckBox()
@@ -123,19 +122,6 @@ Partial Class ListaOrdenes
         Me.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnEditar.UseVisualStyleBackColor = True
         '
-        'btnguardar
-        '
-        Me.btnguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnguardar.Image = Global.Bucarel.My.Resources.Resources.Treetog_I_Floppy_Small
-        Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(763, 420)
-        Me.btnguardar.Name = "btnguardar"
-        Me.btnguardar.Size = New System.Drawing.Size(107, 39)
-        Me.btnguardar.TabIndex = 14
-        Me.btnguardar.Text = "Guardar (F6)"
-        Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnguardar.UseVisualStyleBackColor = True
-        '
         'btnAgregar
         '
         Me.btnAgregar.BackgroundImage = Global.Bucarel.My.Resources.Resources.Button_Add_icon32
@@ -181,7 +167,6 @@ Partial Class ListaOrdenes
         Me.Controls.Add(Me.chkActivo)
         Me.Controls.Add(Me.btnEliminar)
         Me.Controls.Add(Me.btnEditar)
-        Me.Controls.Add(Me.btnguardar)
         Me.Controls.Add(Me.btnAgregar)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.txtBuscar)
@@ -199,7 +184,6 @@ Partial Class ListaOrdenes
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtBuscar As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents btnguardar As System.Windows.Forms.Button
     Friend WithEvents btnAgregar As System.Windows.Forms.Button
     Friend WithEvents btnEditar As System.Windows.Forms.Button
     Friend WithEvents btnEliminar As System.Windows.Forms.Button

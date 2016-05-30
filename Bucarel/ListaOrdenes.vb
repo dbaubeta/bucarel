@@ -30,7 +30,10 @@
         If e.KeyCode = Keys.F3 Then
             Me.txtBuscar.Text = ""
             Me.txtBuscar.Focus()
-
+        ElseIf e.KeyCode = Keys.F4 Then
+            btnAgregar_Click(sender, e)
+        ElseIf e.KeyCode = Keys.F2 Then
+            btnEditar_Click(sender, e)
         End If
     End Sub
 
@@ -46,8 +49,6 @@
     End Sub
 
 
-
-
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
 
         Dim p As New Entidades.ordentrabajo
@@ -57,8 +58,7 @@
         o.ShowDialog()
         If o.save Then ctrl.guardarorden(p)
         o.Dispose()
-        Me.DGOrdenes.Refresh()
-
+        ctrl.llenarGrillaordenes(Me.DGOrdenes)
 
     End Sub
 
@@ -70,7 +70,8 @@
         o.ShowDialog()
         If o.save Then ctrl.guardarorden(p)
         o.Dispose()
-        Me.DGOrdenes.Refresh()
+        ctrl.llenarGrillaordenes(Me.DGOrdenes)
+
 
 
     End Sub
@@ -87,4 +88,5 @@
 
 
     End Sub
+
 End Class

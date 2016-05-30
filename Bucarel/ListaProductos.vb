@@ -131,4 +131,7 @@
 
     End Sub
 
+    Private Sub DGProductos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGProductos.CellContentClick
+
+    End Sub
 End Class

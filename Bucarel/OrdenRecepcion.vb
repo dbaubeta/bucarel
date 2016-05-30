@@ -1,4 +1,4 @@
-﻿Public Class OrdenEntrega
+﻿Public Class OrdenRecepcion
     Dim ctrl As New Negocio.Controller
 
     Private _orden As Entidades.ordentrabajo
@@ -11,12 +11,12 @@
         End Set
     End Property
 
-    Private _ordenEntrega As Entidades.ordenEntrega
-    Public Property ordenEntrega() As Entidades.ordenEntrega
+    Private _ordenEntrega As Entidades.ordenRecepcion
+    Public Property ordenEntrega() As Entidades.ordenRecepcion
         Get
             Return _ordenEntrega
         End Get
-        Set(ByVal value As Entidades.ordenEntrega)
+        Set(ByVal value As Entidades.ordenRecepcion)
             _ordenEntrega = value
         End Set
     End Property

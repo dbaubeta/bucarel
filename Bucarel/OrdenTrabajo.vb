@@ -189,8 +189,8 @@
     ' =============================================================================================================================
     Private Sub btnAddEntregas_Click(sender As Object, e As EventArgs) Handles btnAddEntregas.Click
 
-        Dim oe As New Entidades.ordenEntrega
-        Dim pant As New Bucarel.OrdenEntrega
+        Dim oe As New Entidades.ordenRecepcion
+        Dim pant As New Bucarel.OrdenRecepcion
         oe.cantidad = 0
         oe.fecha = Now
         pant.ordenEntrega = oe
@@ -198,7 +198,7 @@
 
         pant.ShowDialog()
         If pant.save Then
-            Me.orden.listaEntregas.Add(oe)
+            Me.orden.listaRecepciones.Add(oe)
         End If
         pant.Dispose()
         ctrl.llenarGrillaOrdenEntregas(Me.DGEntregas, Me.orden)
@@ -208,31 +208,31 @@
 
     Private Sub btnDelEntregas_Click(sender As Object, e As EventArgs) Handles btnDelEntregas.Click
 
-        Me.orden.listaEntregas.RemoveAll(Function(i) i.ID = DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenEntrega).ID)
+        Me.orden.listaRecepciones.RemoveAll(Function(i) i.ID = DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenRecepcion).ID)
         ctrl.llenarGrillaOrdenEntregas(Me.DGEntregas, Me.orden)
 
     End Sub
 
     Private Sub btnEditEntregas_Click(sender As Object, e As EventArgs) Handles btnEditEntregas.Click
 
-        Dim oe As New Entidades.ordenEntrega
-        Dim pant As New Bucarel.OrdenEntrega
-        oe.cantidad = DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenEntrega).cantidad
-        oe.IDTalle = DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenEntrega).IDTalle
-        oe.ID = DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenEntrega).ID
-        oe.fecha = DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenEntrega).fecha
-        oe.nombre = DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenEntrega).nombre
+        Dim oe As New Entidades.ordenRecepcion
+        Dim pant As New Bucarel.OrdenRecepcion
+        oe.cantidad = DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenRecepcion).cantidad
+        oe.IDTalle = DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenRecepcion).IDTalle
+        oe.ID = DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenRecepcion).ID
+        oe.fecha = DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenRecepcion).fecha
+        oe.nombre = DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenRecepcion).nombre
 
         pant.ordenEntrega = oe
         pant.orden = Me.orden
 
         pant.ShowDialog()
         If pant.save Then
-            DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenEntrega).cantidad = oe.cantidad
-            DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenEntrega).ID = oe.ID
-            DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenEntrega).fecha = oe.fecha
-            DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenEntrega).IDTalle = oe.IDTalle
-            DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenEntrega).nombre = oe.nombre
+            DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenRecepcion).cantidad = oe.cantidad
+            DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenRecepcion).ID = oe.ID
+            DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenRecepcion).fecha = oe.fecha
+            DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenRecepcion).IDTalle = oe.IDTalle
+            DirectCast(DGEntregas.CurrentRow.DataBoundItem, Entidades.ordenRecepcion).nombre = oe.nombre
             ctrl.llenarGrillaOrdenEntregas(Me.DGEntregas, Me.orden)
         End If
         pant.Dispose()
