@@ -1,0 +1,14 @@
+F:\git\Bucarel\BD\bin\Release\BD.dll
+F:\git\Bucarel\BD\bin\Release\BD.pdb
+F:\git\Bucarel\BD\bin\Release\BD.xml
+F:\git\Bucarel\BD\bin\Release\Entidades.dll
+F:\git\Bucarel\BD\bin\Release\Npgsql.dll
+F:\git\Bucarel\BD\bin\Release\Entidades.pdb
+F:\git\Bucarel\BD\bin\Release\Entidades.xml
+F:\git\Bucarel\BD\bin\Release\Npgsql.xml
+F:\git\Bucarel\BD\obj\Release\BD.vbprojResolveAssemblyReference.cache
+F:\git\Bucarel\BD\obj\Release\BD.Resources.resources
+F:\git\Bucarel\BD\obj\Release\BD.vbproj.GenerateResource.Cache
+F:\git\Bucarel\BD\obj\Release\BD.dll
+F:\git\Bucarel\BD\obj\Release\BD.xml
+F:\git\Bucarel\BD\obj\Release\BD.pdb

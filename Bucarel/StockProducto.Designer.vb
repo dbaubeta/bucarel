@@ -31,6 +31,9 @@ Partial Class StockProducto
         Me.Label8 = New System.Windows.Forms.Label()
         Me.cbProductos = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.cbTipo = New System.Windows.Forms.ComboBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cbTalles = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'DateTimePicker1
@@ -55,7 +58,7 @@ Partial Class StockProducto
         Me.btnCancelar.BackgroundImage = Global.Bucarel.My.Resources.Resources.Button_Delete_icon32
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCancelar.Location = New System.Drawing.Point(155, 169)
+        Me.btnCancelar.Location = New System.Drawing.Point(333, 233)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(107, 42)
         Me.btnCancelar.TabIndex = 52
@@ -68,7 +71,7 @@ Partial Class StockProducto
         Me.btnguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnguardar.Image = Global.Bucarel.My.Resources.Resources.Treetog_I_Floppy_Small
         Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(268, 171)
+        Me.btnguardar.Location = New System.Drawing.Point(446, 235)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(107, 39)
         Me.btnguardar.TabIndex = 53
@@ -79,7 +82,7 @@ Partial Class StockProducto
         'txtcantidad
         '
         Me.txtcantidad.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtcantidad.Location = New System.Drawing.Point(78, 126)
+        Me.txtcantidad.Location = New System.Drawing.Point(78, 157)
         Me.txtcantidad.Name = "txtcantidad"
         Me.txtcantidad.Size = New System.Drawing.Size(83, 22)
         Me.txtcantidad.TabIndex = 51
@@ -88,7 +91,7 @@ Partial Class StockProducto
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(18, 129)
+        Me.Label7.Location = New System.Drawing.Point(18, 160)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(59, 16)
         Me.Label7.TabIndex = 56
@@ -100,9 +103,9 @@ Partial Class StockProducto
         Me.Label8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(18, 96)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(34, 16)
+        Me.Label8.Size = New System.Drawing.Size(49, 16)
         Me.Label8.TabIndex = 55
-        Me.Label8.Text = "Talle"
+        Me.Label8.Text = "Prenda"
         '
         'cbProductos
         '
@@ -124,11 +127,44 @@ Partial Class StockProducto
         Me.Label1.TabIndex = 54
         Me.Label1.Text = "Datos de la entrega"
         '
+        'cbTipo
+        '
+        Me.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbTipo.FormattingEnabled = True
+        Me.cbTipo.Items.AddRange(New Object() {"Entrada", "Salida"})
+        Me.cbTipo.Location = New System.Drawing.Point(167, 157)
+        Me.cbTipo.Name = "cbTipo"
+        Me.cbTipo.Size = New System.Drawing.Size(121, 21)
+        Me.cbTipo.TabIndex = 60
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(18, 123)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(34, 16)
+        Me.Label3.TabIndex = 62
+        Me.Label3.Text = "Talle"
+        '
+        'cbTalles
+        '
+        Me.cbTalles.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.cbTalles.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.cbTalles.FormattingEnabled = True
+        Me.cbTalles.Location = New System.Drawing.Point(78, 123)
+        Me.cbTalles.Name = "cbTalles"
+        Me.cbTalles.Size = New System.Drawing.Size(83, 21)
+        Me.cbTalles.TabIndex = 61
+        '
         'StockProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(565, 242)
+        Me.ClientSize = New System.Drawing.Size(565, 286)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.cbTalles)
+        Me.Controls.Add(Me.cbTipo)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnCancelar)
@@ -154,4 +190,7 @@ Partial Class StockProducto
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents cbProductos As System.Windows.Forms.ComboBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents cbTipo As System.Windows.Forms.ComboBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents cbTalles As System.Windows.Forms.ComboBox
 End Class

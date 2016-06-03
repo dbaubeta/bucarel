@@ -20,6 +20,8 @@
 
         Dim temp As List(Of Entidades.talle)
 
+        c.datasource = Nothing
+        c.items.clear()
         c.DisplayMember = "nombre"
         c.ValueMember = "id"
         temp = p.talles 'bd.obtenertalles
@@ -36,6 +38,9 @@
     Public Sub llenarComboboxTalles(ByRef c As Object, o As Entidades.ordentrabajo, Optional minuslist As List(Of Entidades.talle) = Nothing)
 
         Dim temp As New List(Of Entidades.talle)
+
+        c.datasource = Nothing
+        c.items.clear()
 
         c.DisplayMember = "nombre"
         c.ValueMember = "id"
@@ -60,6 +65,9 @@
 
     Public Sub llenarComboboxProductos(ByRef c As Object)
 
+        c.datasource = Nothing
+        c.items.clear()
+
         c.DisplayMember = "nombre"
         c.ValueMember = "id"
 
@@ -74,6 +82,10 @@
     End Sub
 
     Public Sub llenarComboboxMateriales(ByRef c As Object, Optional minuslist As List(Of Entidades.material) = Nothing)
+
+        c.datasource = Nothing
+        c.items.clear()
+
 
         Dim temp As List(Of Entidades.material)
 

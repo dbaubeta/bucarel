@@ -1,0 +1,8 @@
+F:\git\Bucarel\Entidades\bin\Release\Entidades.dll
+F:\git\Bucarel\Entidades\bin\Release\Entidades.pdb
+F:\git\Bucarel\Entidades\bin\Release\Entidades.xml
+F:\git\Bucarel\Entidades\obj\Release\Entidades.Resources.resources
+F:\git\Bucarel\Entidades\obj\Release\Entidades.vbproj.GenerateResource.Cache
+F:\git\Bucarel\Entidades\obj\Release\Entidades.dll
+F:\git\Bucarel\Entidades\obj\Release\Entidades.xml
+F:\git\Bucarel\Entidades\obj\Release\Entidades.pdb

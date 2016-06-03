@@ -29,15 +29,21 @@
         ctrl.llenarComboboxMateriales(Me.cbMateriales)
         Me.txtcantidad.Text = 0
         Label1.Text = "Ingresar stock material"
+        Me.cbTipo.SelectedIndex = 0
         If Me.StockMaterial.ID <> 0 Then
             Dim lp As List(Of Entidades.material) = DirectCast(Me.cbMateriales.DataSource, List(Of Entidades.material))
             Me.cbMateriales.SelectedItem = lp.Find(Function(c) c.ID = Me.StockMaterial.materialid)
-            Me.txtcantidad.Text = Me.StockMaterial.cantidad
+            Me.txtcantidad.Text = System.Math.Abs(Me.StockMaterial.cantidad)
             Me.DateTimePicker1.Value = Me.StockMaterial.fecha
+            If Me.StockMaterial.cantidad > 0 Then
+                Me.cbTipo.SelectedIndex = 0
+            Else
+                Me.cbTipo.SelectedIndex = 1
+            End If
 
             Me.Label1.Text = "Modificar stock material"
         End If
-        Me.save = False
+            Me.save = False
 
 
     End Sub
@@ -56,6 +62,7 @@
                         Me.StockMaterial.materialid = DirectCast(Me.cbMateriales.SelectedItem, Entidades.material).ID
                         Me.StockMaterial.fecha = Me.DateTimePicker1.Value
                         Me.StockMaterial.cantidad = Long.Parse(Me.txtcantidad.Text)
+                        If Me.cbTipo.SelectedIndex = 1 Then Me.StockMaterial.cantidad *= -1
                         Me.save = True
                         Me.Hide()
                     Else
@@ -85,7 +92,5 @@
         End If
 
     End Sub
-
-
 
 End Class

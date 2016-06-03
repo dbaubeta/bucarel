@@ -78,7 +78,7 @@ Partial Class main
         Me.Button6.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.ForeColor = System.Drawing.Color.White
         Me.Button6.Image = Global.Bucarel.My.Resources.Resources.Materiales
-        Me.Button6.Location = New System.Drawing.Point(289, 337)
+        Me.Button6.Location = New System.Drawing.Point(551, 336)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(232, 153)
         Me.Button6.TabIndex = 5
@@ -101,7 +101,7 @@ Partial Class main
         Me.Button4.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.Color.Black
         Me.Button4.Image = Global.Bucarel.My.Resources.Resources.todo
-        Me.Button4.Location = New System.Drawing.Point(818, 70)
+        Me.Button4.Location = New System.Drawing.Point(27, 336)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(232, 153)
         Me.Button4.TabIndex = 3
@@ -148,7 +148,7 @@ Partial Class main
         '
         Me.Button7.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold)
         Me.Button7.Image = Global.Bucarel.My.Resources.Resources.camisas
-        Me.Button7.Location = New System.Drawing.Point(27, 337)
+        Me.Button7.Location = New System.Drawing.Point(289, 336)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(227, 153)
         Me.Button7.TabIndex = 9

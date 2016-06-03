@@ -14,13 +14,13 @@ Public Class ReporteStock
 
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
 
-        GenerarExcelStockProductos()
+        GenerarExcelStock()
 
 
     End Sub
 
 
-    Private Sub GenerarExcelStockProductos()
+    Private Sub GenerarExcelStock()
 
 
         Dim filaloop As Integer
@@ -105,66 +105,11 @@ Public Class ReporteStock
 
         End With
 
+        xlWorkBook.Sheets.Add()
+        xlWorkSheet = xlWorkBook.Sheets(2)
 
-
-        xlWorkBook.SaveAs(Me.txtArchivo.Text, Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, misValue, misValue, _
-         Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue)
-
-        xlWorkBook.Close(True, misValue, misValue)
-        xlApp.Quit()
-
-        releaseObject(xlWorkSheet)
-        releaseObject(xlWorkBook)
-        releaseObject(xlApp)
-
-        RunCommandCom(Me.txtArchivo.Text, "", False)
-
-        '4MessageBox.Show("Archivo creado")
-
-        l = Nothing
-        tl = Nothing
-
-    End Sub
-
-
-    Shared Sub RunCommandCom(command As String, arguments As String, permanent As Boolean)
-        Dim p As Process = New Process()
-        Dim pi As ProcessStartInfo = New ProcessStartInfo()
-        pi.Arguments = " " + If(permanent = True, "/K", "/C") + " " + command + " " + arguments
-        pi.FileName = "cmd.exe"
-        p.StartInfo = pi
-        p.Start()
-    End Sub
-
-    Private Sub GenerarExcelStockMateriales()
-
-
-        Dim filaloop As Integer
-        Dim columnaloop As Integer
-
-
-        Dim l As List(Of Entidades.reportestock)
-        l = ctrl.obtenerReporteStock
-
-        Dim tl As List(Of Entidades.talle)
-        tl = ctrl.obtenerTalles
-
-        Dim xlApp As Excel.Application = New Microsoft.Office.Interop.Excel.Application()
-
-        If xlApp Is Nothing Then
-            MessageBox.Show("Excel is not properly installed!!")
-            Return
-        End If
-
-        Dim xlWorkBook As Excel.Workbook
-        Dim xlWorkSheet As Excel.Worksheet
-        Dim misValue As Object = System.Reflection.Missing.Value
-
-        xlWorkBook = xlApp.Workbooks.Add()
-        xlWorkSheet = xlWorkBook.Sheets(1)
-
-        Dim filainicio As Integer = 2
-        Dim columnainicio As Integer = 1
+        filainicio = 2
+        columnainicio = 1
 
         xlWorkSheet.Cells(filainicio, 1) = "Producto"
 
@@ -176,7 +121,7 @@ Public Class ReporteStock
 
 
         filaloop = filainicio
-        Dim ultimoProducto As String = ""
+        ultimoProducto = ""
         For Each r As Entidades.reportestock In l
 
             If r.productonombre <> ultimoProducto Then
@@ -190,13 +135,15 @@ Public Class ReporteStock
 
         Next
 
-
+        ' FORMATEO 
+        ' ====================================================================================
         With xlWorkSheet
             .Cells.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
             .Cells.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter
             With .Range("A1", "A" + filaloop.ToString)
                 .Font.Bold = True
                 .HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
+                .Columns.AutoFit()
             End With
             With .Range(.Cells(filainicio, 1), .Cells(filainicio, (tl.Count + 1)))
                 .Font.Bold = True
@@ -219,8 +166,13 @@ Public Class ReporteStock
 
         End With
 
-        xlWorkBook.SaveAs("F:\git\bucarel\excel\StockProductos.xlsx", Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, misValue, misValue, _
+
+
+
+
+        xlWorkBook.SaveAs(Me.txtArchivo.Text, Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, misValue, misValue, _
          Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue)
+
         xlWorkBook.Close(True, misValue, misValue)
         xlApp.Quit()
 
@@ -228,16 +180,24 @@ Public Class ReporteStock
         releaseObject(xlWorkBook)
         releaseObject(xlApp)
 
-        MessageBox.Show("Archivo creado")
+        RunCommandCom(Me.txtArchivo.Text, "", False)
+
+        'MessageBox.Show("Archivo creado")
 
         l = Nothing
         tl = Nothing
 
-
-
     End Sub
 
 
+    Shared Sub RunCommandCom(command As String, arguments As String, permanent As Boolean)
+        Dim p As Process = New Process()
+        Dim pi As ProcessStartInfo = New ProcessStartInfo()
+        pi.Arguments = " " + If(permanent = True, "/K", "/C") + " " + command + " " + arguments
+        pi.FileName = "cmd.exe"
+        p.StartInfo = pi
+        p.Start()
+    End Sub
 
 
     Private Sub releaseObject(ByVal obj As Object)

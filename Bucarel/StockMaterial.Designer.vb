@@ -31,6 +31,7 @@ Partial Class StockMaterial
         Me.Label8 = New System.Windows.Forms.Label()
         Me.cbMateriales = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.cbTipo = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'DateTimePicker1
@@ -55,7 +56,7 @@ Partial Class StockMaterial
         Me.btnCancelar.BackgroundImage = Global.Bucarel.My.Resources.Resources.Button_Delete_icon32
         Me.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnCancelar.Location = New System.Drawing.Point(155, 169)
+        Me.btnCancelar.Location = New System.Drawing.Point(333, 189)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(107, 42)
         Me.btnCancelar.TabIndex = 52
@@ -68,7 +69,7 @@ Partial Class StockMaterial
         Me.btnguardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnguardar.Image = Global.Bucarel.My.Resources.Resources.Treetog_I_Floppy_Small
         Me.btnguardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnguardar.Location = New System.Drawing.Point(268, 171)
+        Me.btnguardar.Location = New System.Drawing.Point(446, 191)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(107, 39)
         Me.btnguardar.TabIndex = 53
@@ -100,9 +101,9 @@ Partial Class StockMaterial
         Me.Label8.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(18, 96)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(34, 16)
+        Me.Label8.Size = New System.Drawing.Size(31, 16)
         Me.Label8.TabIndex = 55
-        Me.Label8.Text = "Talle"
+        Me.Label8.Text = "Tela"
         '
         'cbMateriales
         '
@@ -124,11 +125,22 @@ Partial Class StockMaterial
         Me.Label1.TabIndex = 54
         Me.Label1.Text = "Datos de la entrega"
         '
+        'cbTipo
+        '
+        Me.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbTipo.FormattingEnabled = True
+        Me.cbTipo.Items.AddRange(New Object() {"Entrada", "Salida"})
+        Me.cbTipo.Location = New System.Drawing.Point(174, 126)
+        Me.cbTipo.Name = "cbTipo"
+        Me.cbTipo.Size = New System.Drawing.Size(121, 21)
+        Me.cbTipo.TabIndex = 59
+        '
         'StockMaterial
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(565, 242)
+        Me.Controls.Add(Me.cbTipo)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnCancelar)
@@ -154,4 +166,5 @@ Partial Class StockMaterial
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents cbMateriales As System.Windows.Forms.ComboBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents cbTipo As System.Windows.Forms.ComboBox
 End Class

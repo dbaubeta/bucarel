@@ -1,0 +1,17 @@
+F:\git\Bucarel\Negocio\bin\Release\Negocio.dll
+F:\git\Bucarel\Negocio\bin\Release\Negocio.pdb
+F:\git\Bucarel\Negocio\bin\Release\Negocio.xml
+F:\git\Bucarel\Negocio\bin\Release\BD.dll
+F:\git\Bucarel\Negocio\bin\Release\Entidades.dll
+F:\git\Bucarel\Negocio\bin\Release\Npgsql.dll
+F:\git\Bucarel\Negocio\bin\Release\BD.pdb
+F:\git\Bucarel\Negocio\bin\Release\BD.xml
+F:\git\Bucarel\Negocio\bin\Release\Entidades.pdb
+F:\git\Bucarel\Negocio\bin\Release\Entidades.xml
+F:\git\Bucarel\Negocio\bin\Release\Npgsql.xml
+F:\git\Bucarel\Negocio\obj\Release\Negocio.vbprojResolveAssemblyReference.cache
+F:\git\Bucarel\Negocio\obj\Release\Negocio.Resources.resources
+F:\git\Bucarel\Negocio\obj\Release\Negocio.vbproj.GenerateResource.Cache
+F:\git\Bucarel\Negocio\obj\Release\Negocio.dll
+F:\git\Bucarel\Negocio\obj\Release\Negocio.xml
+F:\git\Bucarel\Negocio\obj\Release\Negocio.pdb

@@ -52,6 +52,16 @@
         End Set
     End Property
 
+    Private _talleid As Long
+    Public Property talleid() As Long
+        Get
+            Return _talleid
+        End Get
+        Set(ByVal value As Long)
+            _talleid = value
+        End Set
+    End Property
+
 
 
 End Class

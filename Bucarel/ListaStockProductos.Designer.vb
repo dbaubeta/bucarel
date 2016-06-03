@@ -64,9 +64,9 @@ Partial Class ListaStockProductos
         Me.Label1.Font = New System.Drawing.Font("Arial", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(20, 25)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(416, 34)
+        Me.Label1.Size = New System.Drawing.Size(386, 34)
         Me.Label1.TabIndex = 55
-        Me.Label1.Text = "Ingreso/egreso de productos"
+        Me.Label1.Text = "Ingreso/egreso de prendas"
         '
         'DGStockProductos
         '
@@ -171,7 +171,7 @@ Partial Class ListaStockProductos
         Me.Controls.Add(Me.cbproductos)
         Me.Controls.Add(Me.DGStockProductos)
         Me.Name = "ListaStockProductos"
-        Me.Text = "IngresoMateriales"
+        Me.Text = "Ingreso de Prendas"
         CType(Me.DGStockProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
