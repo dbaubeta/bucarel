@@ -16,7 +16,7 @@ Public Class BD
     Public Function obtenerreportestock() As List(Of Entidades.reportestock)
         Dim l As New List(Of Entidades.reportestock)
         'cn.Open()
-        Dim c As New NpgsqlCommand("select productoid, productonombre, fecha, talleid, tallenombre, sum(stock) stock from ( " + _
+        Dim c As New NpgsqlCommand("select productoid, productonombre, talleid, tallenombre, sum(stock) stock from ( " + _
                                     "select productoid, p.nombre productonombre, fecha, talleid, t.nombre tallenombre, cantidad stock from stockproducto sp  " + _
                                     "join producto p on p.id = sp.productoid " + _
                                     "join talle t on t.id = sp.talleid " + _
@@ -25,7 +25,7 @@ Public Class BD
                                     "join ordentrabajo o on o.id = sp.ordenid " + _
                                     "join producto p on p.id = o.productoid " + _
                                     "join talle t on t.id = sp.talleid) as x " + _
-                                    "group by productoid, productonombre, fecha, talleid, tallenombre " + _
+                                    "group by productoid, productonombre, talleid, tallenombre " + _
                                     "order by productonombre, tallenombre", cn)
         Dim r As NpgsqlDataReader = c.ExecuteReader
 
@@ -48,6 +48,42 @@ Public Class BD
         'cn.Close()
 
     End Function
+
+
+
+    Public Function obtenerreportestockmateriales() As List(Of Entidades.reportestockmaterial)
+        Dim l As New List(Of Entidades.reportestockmaterial)
+        'cn.Open()
+        Dim c As New NpgsqlCommand("select materialid, materialnombre, sum(stock) stock from (" + _
+                                    "select materialid, p.nombre materialnombre, fecha, cantidad stock from stockmaterial sp " + _
+                                    "join material p on p.id = sp.materialid " + _
+                                    "union " + _
+                                    "select materialid, p.nombre materialnombre, o.fechacreacion, cantidad * -1 stock from ordenmaterial sp  " + _
+                                    "join ordentrabajo o on o.id = sp.ordenid " + _
+                                    "join material p on p.id  = materialid) as x " + _
+                                    "group by materialid, materialnombre " + _
+                                    "order by materialnombre", cn)
+        Dim r As NpgsqlDataReader = c.ExecuteReader
+
+        Do While r.Read
+
+            Dim p As New Entidades.reportestockmaterial
+            p.grupo1 = "Materiales"
+            p.materialid = r.Item("materialid")
+            p.materialnombre = r.Item("materialnombre")
+            p.stock = r.Item("stock")
+            l.Add(p)
+
+        Loop
+
+        r.Close()
+
+        Return l
+
+        'cn.Close()
+
+    End Function
+
 
 
     Public Function obtenertalles() As List(Of Entidades.talle)
@@ -126,59 +162,6 @@ Public Class BD
 
     End Function
 
-
-
-    Public Function obtenerStockProductos() As List(Of Entidades.StockProducto)
-        Dim l As New List(Of Entidades.StockProducto)
-
-        'cn.Open()
-        Dim c As New NpgsqlCommand("select sm.id, fecha, productoid, nombre, cantidad from stockproducto sm join producto m on m.id = sm.productoid order by id", cn)
-        Dim r As NpgsqlDataReader = c.ExecuteReader
-
-        Do While r.Read
-
-            Dim p As New Entidades.StockProducto
-            p.ID = r.Item("id")
-            p.productoid = r.Item("productoid")
-            p.nombre = r.Item("nombre")
-            p.fecha = r.Item("fecha")
-            p.cantidad = r.Item("cantidad")
-            l.Add(p)
-
-        Loop
-        r.Close()
-
-        Return l
-
-
-
-    End Function
-
-
-    Public Function obtenerStockProductos(d As Date) As List(Of Entidades.StockProducto)
-        Dim l As New List(Of Entidades.StockProducto)
-
-        'cn.Open()
-        Dim c As New NpgsqlCommand("select sm.id, fecha, productoid, nombre, cantidad from stockproducto sm join producto m on m.id = sm.productoid where fecha = :fecha order by id", cn)
-        c.Parameters.AddWithValue("fecha", NpgsqlTypes.NpgsqlDbType.Date, d)
-        Dim r As NpgsqlDataReader = c.ExecuteReader
-
-        Do While r.Read
-
-            Dim p As New Entidades.StockProducto
-            p.ID = r.Item("id")
-            p.productoid = r.Item("productoid")
-            p.nombre = r.Item("nombre")
-            p.fecha = r.Item("fecha")
-            p.cantidad = r.Item("cantidad")
-            l.Add(p)
-
-        Loop
-        r.Close()
-
-        Return l
-
-    End Function
 
     Public Function obtenerProductos() As List(Of Entidades.producto)
         Dim l As New List(Of Entidades.producto)
@@ -768,8 +751,9 @@ Public Class BD
 
     Public Sub InsertarStockProducto(ByRef p As Entidades.StockProducto)
 
-        Dim c As New NpgsqlCommand("insert into stockproducto (productoid, fecha, cantidad) values(:productoid, :fecha, :cantidad) returning id", cn)
+        Dim c As New NpgsqlCommand("insert into stockproducto (productoid, fecha, cantidad, talleid) values(:productoid, :fecha, :cantidad, :talleid) returning id", cn)
         c.Parameters.AddWithValue("productoid", NpgsqlTypes.NpgsqlDbType.Integer, p.productoid)
+        c.Parameters.AddWithValue("talleid", NpgsqlTypes.NpgsqlDbType.Integer, p.talle.ID)
         c.Parameters.AddWithValue("fecha", NpgsqlTypes.NpgsqlDbType.Date, p.fecha)
         c.Parameters.AddWithValue("cantidad", NpgsqlTypes.NpgsqlDbType.Integer, p.cantidad)
 
@@ -784,8 +768,9 @@ Public Class BD
 
     Public Sub ModificarStockProducto(ByRef p As Entidades.StockProducto)
 
-        Dim c As New NpgsqlCommand("update stockproducto set productoid = :productoid, fecha = :fecha, cantidad= :cantidad where id = :id", cn)
+        Dim c As New NpgsqlCommand("update stockproducto set productoid = :productoid, fecha = :fecha, cantidad= :cantidad, talleid = :talleid where id = :id", cn)
         c.Parameters.AddWithValue("productoid", NpgsqlTypes.NpgsqlDbType.Integer, p.productoid)
+        c.Parameters.AddWithValue("talleid", NpgsqlTypes.NpgsqlDbType.Integer, p.talle.ID)
         c.Parameters.AddWithValue("fecha", NpgsqlTypes.NpgsqlDbType.Date, p.fecha)
         c.Parameters.AddWithValue("cantidad", NpgsqlTypes.NpgsqlDbType.Integer, p.cantidad)
         c.Parameters.AddWithValue("ID", NpgsqlTypes.NpgsqlDbType.Integer, p.ID)
@@ -802,6 +787,65 @@ Public Class BD
 
 
     End Sub
+
+
+
+
+    Public Function obtenerStockProductos() As List(Of Entidades.StockProducto)
+        Dim l As New List(Of Entidades.StockProducto)
+
+        'cn.Open()
+        Dim c As New NpgsqlCommand("select sm.id, fecha, productoid, talleid, m.nombre, t.nombre tallenombre, cantidad from stockproducto sm join producto m on m.id = sm.productoid join talle t on t.id = sm.talleid order by sm.id", cn)
+        Dim r As NpgsqlDataReader = c.ExecuteReader
+
+        Do While r.Read
+
+            Dim p As New Entidades.StockProducto
+            p.ID = r.Item("id")
+            p.productoid = r.Item("productoid")
+            p.talle.ID = r.Item("talleid")
+            p.talle.nombre = r.Item("tallenombre")
+            p.nombre = r.Item("nombre")
+            p.fecha = r.Item("fecha")
+            p.cantidad = r.Item("cantidad")
+            l.Add(p)
+
+        Loop
+        r.Close()
+
+        Return l
+
+
+
+    End Function
+
+
+    Public Function obtenerStockProductos(d As Date) As List(Of Entidades.StockProducto)
+        Dim l As New List(Of Entidades.StockProducto)
+
+        'cn.Open()
+        Dim c As New NpgsqlCommand("select sm.id, fecha, productoid, talleid, m.nombre, t.nombre tallenombre, cantidad from stockproducto sm join producto m on m.id = sm.productoid join talle t on t.id = sm.talleid where fecha = :fecha order by sm.id", cn)
+        c.Parameters.AddWithValue("fecha", NpgsqlTypes.NpgsqlDbType.Date, d)
+        Dim r As NpgsqlDataReader = c.ExecuteReader
+
+        Do While r.Read
+
+            Dim p As New Entidades.StockProducto
+            p.ID = r.Item("id")
+            p.productoid = r.Item("productoid")
+            p.talle.ID = r.Item("talleid")
+            p.talle.nombre = r.Item("tallenombre")
+            p.nombre = r.Item("nombre")
+            p.fecha = r.Item("fecha")
+            p.cantidad = r.Item("cantidad")
+            l.Add(p)
+
+        Loop
+        r.Close()
+
+        Return l
+
+    End Function
 
 
 End Class

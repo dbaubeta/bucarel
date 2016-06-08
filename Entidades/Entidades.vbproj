@@ -65,6 +65,7 @@
     <Compile Include="ordenRecepcion.vb" />
     <Compile Include="ordenMaterial.vb" />
     <Compile Include="ordenTalle.vb" />
+    <Compile Include="reportestockmaterial.vb" />
     <Compile Include="reportestock.vb" />
     <Compile Include="StockProducto.vb" />
     <Compile Include="StockMaterial.vb" />

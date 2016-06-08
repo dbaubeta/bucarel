@@ -32,6 +32,7 @@ Partial Class ReporteStock
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.lblmensaje = New System.Windows.Forms.Label()
         CType(Me.reportestockBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -110,11 +111,22 @@ Partial Class ReporteStock
         Me.Label1.TabIndex = 53
         Me.Label1.Text = "Reporte de Stock"
         '
+        'lblmensaje
+        '
+        Me.lblmensaje.AutoSize = True
+        Me.lblmensaje.Font = New System.Drawing.Font("Arial", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblmensaje.ForeColor = System.Drawing.Color.Red
+        Me.lblmensaje.Location = New System.Drawing.Point(15, 196)
+        Me.lblmensaje.Name = "lblmensaje"
+        Me.lblmensaje.Size = New System.Drawing.Size(0, 15)
+        Me.lblmensaje.TabIndex = 57
+        '
         'ReporteStock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(434, 221)
+        Me.Controls.Add(Me.lblmensaje)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnCancelar)
@@ -123,6 +135,7 @@ Partial Class ReporteStock
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label1)
         Me.Name = "ReporteStock"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "ReporteStock"
         CType(Me.reportestockBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -138,4 +151,5 @@ Partial Class ReporteStock
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
+    Friend WithEvents lblmensaje As System.Windows.Forms.Label
 End Class

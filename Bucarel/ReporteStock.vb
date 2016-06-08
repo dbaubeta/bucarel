@@ -7,6 +7,7 @@ Public Class ReporteStock
     Private Sub ReporteStock_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.txtArchivo.Text = System.IO.Directory.GetCurrentDirectory + "\StockProductos.xlsx"
+        Me.lblmensaje.Text = ""
 
     End Sub
 
@@ -15,7 +16,7 @@ Public Class ReporteStock
     Private Sub btnguardar_Click(sender As Object, e As EventArgs) Handles btnguardar.Click
 
         GenerarExcelStock()
-
+        Me.Close()
 
     End Sub
 
@@ -26,8 +27,11 @@ Public Class ReporteStock
         Dim filaloop As Integer
         Dim columnaloop As Integer
 
-
+        Me.lblmensaje.Text = "Generando Excel..."
         Dim l As List(Of Entidades.reportestock)
+        Dim l2 As List(Of Entidades.reportestockmaterial)
+
+        Me.lblmensaje.Text = "Leyendo prendas de BD..."
         l = ctrl.obtenerReporteStock
 
         Dim tl As List(Of Entidades.talle)
@@ -50,7 +54,7 @@ Public Class ReporteStock
         Dim filainicio As Integer = 2
         Dim columnainicio As Integer = 1
 
-        xlWorkSheet.Cells(filainicio, 1) = "Producto"
+        xlWorkSheet.Cells(filainicio, 1) = "Prenda"
 
         columnaloop = columnainicio + 1
         For Each t As Entidades.talle In tl
@@ -61,6 +65,8 @@ Public Class ReporteStock
 
         filaloop = filainicio
         Dim ultimoProducto As String = ""
+
+        Me.lblmensaje.Text = "Escribiendo datos de prendas..."
         For Each r As Entidades.reportestock In l
 
             If r.productonombre <> ultimoProducto Then
@@ -73,6 +79,8 @@ Public Class ReporteStock
             xlWorkSheet.Cells(filaloop, columnaloop) = r.stock
 
         Next
+
+        Me.lblmensaje.Text = "Formateando prendas..."
 
         ' FORMATEO 
         ' ====================================================================================
@@ -105,33 +113,27 @@ Public Class ReporteStock
 
         End With
 
-        xlWorkBook.Sheets.Add()
+        Me.lblmensaje.Text = "Leyendo telas de BD..."
+        l2 = ctrl.obtenerReporteStockMateriales
+
+
+        Me.lblmensaje.Text = "Escribiendo datos de telas..."
+
+        xlWorkBook.Sheets.Add(Type.Missing, xlWorkBook.Sheets(1))
         xlWorkSheet = xlWorkBook.Sheets(2)
 
         filainicio = 2
         columnainicio = 1
 
-        xlWorkSheet.Cells(filainicio, 1) = "Producto"
-
-        columnaloop = columnainicio + 1
-        For Each t As Entidades.talle In tl
-            xlWorkSheet.Cells(filainicio, columnaloop) = t.nombre
-            columnaloop += 1
-        Next
-
+        xlWorkSheet.Cells(filainicio, 1) = "Tela"
+        xlWorkSheet.Cells(filainicio, 2) = "Stock"
 
         filaloop = filainicio
-        ultimoProducto = ""
-        For Each r As Entidades.reportestock In l
+        For Each r As Entidades.reportestockmaterial In l2
 
-            If r.productonombre <> ultimoProducto Then
-                ultimoProducto = r.productonombre
-                filaloop += 1
-            End If
-
-            columnaloop = tl.FindIndex(Function(x) x.nombre = r.talle) + 2
-            xlWorkSheet.Cells(filaloop, 1) = r.productonombre
-            xlWorkSheet.Cells(filaloop, columnaloop) = r.stock
+            filaloop += 1
+            xlWorkSheet.Cells(filaloop, 1) = r.materialnombre
+            xlWorkSheet.Cells(filaloop, 2) = r.stock
 
         Next
 
@@ -141,11 +143,13 @@ Public Class ReporteStock
             .Cells.HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter
             .Cells.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter
             With .Range("A1", "A" + filaloop.ToString)
+                '.EntireColumn.AutoFit()
                 .Font.Bold = True
                 .HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft
                 .Columns.AutoFit()
+
             End With
-            With .Range(.Cells(filainicio, 1), .Cells(filainicio, (tl.Count + 1)))
+            With .Range(.Cells(filainicio, 1), .Cells(filainicio, 2))
                 .Font.Bold = True
                 With .Interior
                     .Pattern = Excel.XlPattern.xlPatternSolid
@@ -158,7 +162,6 @@ Public Class ReporteStock
 
             End With
 
-
             .Activate()
             .Application.ActiveWindow.SplitRow = 2
             .Application.ActiveWindow.SplitColumn = 1
@@ -166,10 +169,7 @@ Public Class ReporteStock
 
         End With
 
-
-
-
-
+        If System.IO.File.Exists(Me.txtArchivo.Text) Then My.Computer.FileSystem.DeleteFile(Me.txtArchivo.Text)
         xlWorkBook.SaveAs(Me.txtArchivo.Text, Excel.XlFileFormat.xlOpenXMLWorkbook, misValue, misValue, misValue, misValue, _
          Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue)
 
@@ -213,4 +213,7 @@ Public Class ReporteStock
 
 
 
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        Me.Close()
+    End Sub
 End Class

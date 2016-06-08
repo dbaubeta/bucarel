@@ -23,21 +23,20 @@
     Private Sub Ingresoproductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Me.btnEditar.Enabled = False
+        Me.btnEliminar.Enabled = False
         Me.CenterToScreen()
         ctrl.llenarGrillaStockproducto(Me.DGStockproductos, Me.DTPFecha.Value)
         ctrl.llenarComboboxproductos(Me.cbproductos)
 
     End Sub
 
-
-
     Private Sub DTPFecha_ValueChanged(sender As Object, e As EventArgs) Handles DTPFecha.ValueChanged
 
         Me.btnEditar.Enabled = False
-        ctrl.llenarGrillaStockproducto(Me.DGStockproductos, Me.DTPFecha.Value)
-        Me.DGStockproductos.Refresh()
-        If Me.DGStockproductos.RowCount = 0 Then Me.btnEditar.Enabled = False
-        If Me.DGStockproductos.RowCount = 0 Then Me.btnEliminar.Enabled = False
+        ctrl.llenarGrillaStockProducto(Me.DGStockProductos, Me.DTPFecha.Value)
+        Me.DGStockProductos.Refresh()
+        If Me.DGStockProductos.RowCount = 0 Then Me.btnEditar.Enabled = False
+        If Me.DGStockProductos.RowCount = 0 Then Me.btnEliminar.Enabled = False
 
     End Sub
 
@@ -82,7 +81,8 @@
         Dim pant As New Bucarel.Stockproducto
         oe.cantidad = DirectCast(DGStockproductos.CurrentRow.DataBoundItem, Entidades.Stockproducto).cantidad
         oe.productoid = DirectCast(DGStockproductos.CurrentRow.DataBoundItem, Entidades.Stockproducto).productoid
-        oe.ID = DirectCast(DGStockproductos.CurrentRow.DataBoundItem, Entidades.Stockproducto).ID
+        oe.talle = DirectCast(DGStockProductos.CurrentRow.DataBoundItem, Entidades.StockProducto).talle
+        oe.ID = DirectCast(DGStockProductos.CurrentRow.DataBoundItem, Entidades.StockProducto).ID
         oe.fecha = DirectCast(DGStockproductos.CurrentRow.DataBoundItem, Entidades.Stockproducto).fecha
         oe.nombre = DirectCast(DGStockproductos.CurrentRow.DataBoundItem, Entidades.Stockproducto).nombre
 

@@ -41,7 +41,7 @@ Partial Class StockProducto
         Me.DateTimePicker1.Location = New System.Drawing.Point(78, 62)
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(200, 20)
-        Me.DateTimePicker1.TabIndex = 58
+        Me.DateTimePicker1.TabIndex = 6
         '
         'Label2
         '
@@ -61,7 +61,7 @@ Partial Class StockProducto
         Me.btnCancelar.Location = New System.Drawing.Point(333, 233)
         Me.btnCancelar.Name = "btnCancelar"
         Me.btnCancelar.Size = New System.Drawing.Size(107, 42)
-        Me.btnCancelar.TabIndex = 52
+        Me.btnCancelar.TabIndex = 4
         Me.btnCancelar.Text = "Cancelar"
         Me.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnCancelar.UseVisualStyleBackColor = True
@@ -74,7 +74,7 @@ Partial Class StockProducto
         Me.btnguardar.Location = New System.Drawing.Point(446, 235)
         Me.btnguardar.Name = "btnguardar"
         Me.btnguardar.Size = New System.Drawing.Size(107, 39)
-        Me.btnguardar.TabIndex = 53
+        Me.btnguardar.TabIndex = 5
         Me.btnguardar.Text = "Guardar (F6)"
         Me.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnguardar.UseVisualStyleBackColor = True
@@ -85,7 +85,7 @@ Partial Class StockProducto
         Me.txtcantidad.Location = New System.Drawing.Point(78, 157)
         Me.txtcantidad.Name = "txtcantidad"
         Me.txtcantidad.Size = New System.Drawing.Size(83, 22)
-        Me.txtcantidad.TabIndex = 51
+        Me.txtcantidad.TabIndex = 2
         '
         'Label7
         '
@@ -115,7 +115,7 @@ Partial Class StockProducto
         Me.cbProductos.Location = New System.Drawing.Point(78, 96)
         Me.cbProductos.Name = "cbProductos"
         Me.cbProductos.Size = New System.Drawing.Size(454, 21)
-        Me.cbProductos.TabIndex = 50
+        Me.cbProductos.TabIndex = 0
         '
         'Label1
         '
@@ -135,7 +135,7 @@ Partial Class StockProducto
         Me.cbTipo.Location = New System.Drawing.Point(167, 157)
         Me.cbTipo.Name = "cbTipo"
         Me.cbTipo.Size = New System.Drawing.Size(121, 21)
-        Me.cbTipo.TabIndex = 60
+        Me.cbTipo.TabIndex = 3
         '
         'Label3
         '
@@ -155,7 +155,7 @@ Partial Class StockProducto
         Me.cbTalles.Location = New System.Drawing.Point(78, 123)
         Me.cbTalles.Name = "cbTalles"
         Me.cbTalles.Size = New System.Drawing.Size(83, 21)
-        Me.cbTalles.TabIndex = 61
+        Me.cbTalles.TabIndex = 1
         '
         'StockProducto
         '

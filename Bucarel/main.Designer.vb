@@ -52,7 +52,7 @@ Partial Class main
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial", 21.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Silver
-        Me.Label2.Location = New System.Drawing.Point(21, 273)
+        Me.Label2.Location = New System.Drawing.Point(21, 252)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(1077, 34)
         Me.Label2.TabIndex = 7
@@ -65,7 +65,7 @@ Partial Class main
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial", 21.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.Silver
-        Me.Label3.Location = New System.Drawing.Point(21, 540)
+        Me.Label3.Location = New System.Drawing.Point(16, 500)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(1076, 34)
         Me.Label3.TabIndex = 8
@@ -78,7 +78,7 @@ Partial Class main
         Me.Button6.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.ForeColor = System.Drawing.Color.White
         Me.Button6.Image = Global.Bucarel.My.Resources.Resources.Materiales
-        Me.Button6.Location = New System.Drawing.Point(551, 336)
+        Me.Button6.Location = New System.Drawing.Point(559, 307)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(232, 153)
         Me.Button6.TabIndex = 5
@@ -89,7 +89,7 @@ Partial Class main
         '
         Me.Button5.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold)
         Me.Button5.Image = Global.Bucarel.My.Resources.Resources.Excel_icon
-        Me.Button5.Location = New System.Drawing.Point(27, 586)
+        Me.Button5.Location = New System.Drawing.Point(27, 550)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(227, 153)
         Me.Button5.TabIndex = 4
@@ -101,9 +101,9 @@ Partial Class main
         Me.Button4.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.Color.Black
         Me.Button4.Image = Global.Bucarel.My.Resources.Resources.todo
-        Me.Button4.Location = New System.Drawing.Point(27, 336)
+        Me.Button4.Location = New System.Drawing.Point(27, 307)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(232, 153)
+        Me.Button4.Size = New System.Drawing.Size(227, 153)
         Me.Button4.TabIndex = 3
         Me.Button4.Text = "Ordenes de Trabajo"
         Me.Button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter
@@ -148,9 +148,9 @@ Partial Class main
         '
         Me.Button7.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Bold)
         Me.Button7.Image = Global.Bucarel.My.Resources.Resources.camisas
-        Me.Button7.Location = New System.Drawing.Point(289, 336)
+        Me.Button7.Location = New System.Drawing.Point(289, 307)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(227, 153)
+        Me.Button7.Size = New System.Drawing.Size(232, 153)
         Me.Button7.TabIndex = 9
         Me.Button7.Text = "Stock Prendas"
         Me.Button7.UseVisualStyleBackColor = True
@@ -160,7 +160,7 @@ Partial Class main
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1144, 761)
+        Me.ClientSize = New System.Drawing.Size(1144, 709)
         Me.Controls.Add(Me.Button7)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)

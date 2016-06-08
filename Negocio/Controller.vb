@@ -162,15 +162,22 @@
 
         With g
             .Columns("ID").Visible = False
+            .Columns("fecha").HeaderText = "Fecha"
             .Columns("fecha").DisplayIndex = 0
+            .Columns("productoid").HeaderText = "ID Producto"
             .Columns("productoid").DisplayIndex = 1
+            .Columns("nombre").HeaderText = "Nombre Producto"
             .Columns("nombre").DisplayIndex = 2
-            .Columns("cantidad").DisplayIndex = 3
+            .Columns("tallenombre").DisplayIndex = 3
+            .Columns("tallenombre").HeaderText = "Talle"
+            .Columns("cantidad").DisplayIndex = 4
+            .Columns("cantidad").HeaderText = "Cantidad"
             .Columns("cantidad").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
             .Columns("fecha").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("tallenombre").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
             .Columns("productoid").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("talle").Visible = False
             .Columns("nombre").AutoSizeMode = 16 ' Fill
-
         End With
 
     End Sub
@@ -184,14 +191,23 @@
 
         With g
             .Columns("ID").Visible = False
+            .Columns("fecha").HeaderText = "Fecha"
             .Columns("fecha").DisplayIndex = 0
+            .Columns("productoid").HeaderText = "ID Producto"
             .Columns("productoid").DisplayIndex = 1
+            .Columns("nombre").HeaderText = "Nombre Producto"
             .Columns("nombre").DisplayIndex = 2
-            .Columns("cantidad").DisplayIndex = 3
+            .Columns("tallenombre").DisplayIndex = 3
+            .Columns("tallenombre").HeaderText = "Talle"
+            .Columns("cantidad").DisplayIndex = 4
+            .Columns("cantidad").HeaderText = "Cantidad"
             .Columns("cantidad").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
             .Columns("fecha").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("tallenombre").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
             .Columns("productoid").AutoSizeMode = 10 ' Ancho de las celdas desplegadas
+            .Columns("talle").Visible = False
             .Columns("nombre").AutoSizeMode = 16 ' Fill
+
 
         End With
         If g.Rows.Count > 0 Then
@@ -356,6 +372,13 @@
         Return bd.obtenerreportestock
 
     End Function
+
+    Public Function obtenerReporteStockMateriales() As List(Of Entidades.reportestockmaterial)
+
+        Return bd.obtenerreportestockmateriales
+
+    End Function
+
 
 
     Public Function obtenerTalles() As List(Of Entidades.talle)

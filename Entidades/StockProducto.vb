@@ -52,16 +52,25 @@
         End Set
     End Property
 
-    Private _talleid As Long
-    Public Property talleid() As Long
+    Private _talle As Entidades.talle
+    Public Property talle() As Entidades.talle
         Get
-            Return _talleid
+            Return _talle
         End Get
-        Set(ByVal value As Long)
-            _talleid = value
+        Set(ByVal value As Entidades.talle)
+            _talle = value
         End Set
     End Property
 
+    Public Sub New()
+        Me.talle = New Entidades.talle
+    End Sub
+
+    Public ReadOnly Property tallenombre() As String
+        Get
+            Return Me.talle.nombre
+        End Get
+    End Property
 
 
 End Class
